@@ -46,9 +46,9 @@ public class ClientDao {
         PreparedStatement requette = connexion.prepareStatement(sql);
         
         requette.setString(1, cl.getNom());
-        requette.setString(1, cl.getPrenom());
-        requette.setString(1, cl.getMail());
-        requette.setString(1, cl.getMdp());
+        requette.setString(2, cl.getPrenom());
+        requette.setString(3, cl.getMail());
+        requette.setString(4, cl.getMdp());
         
         requette.execute();
   

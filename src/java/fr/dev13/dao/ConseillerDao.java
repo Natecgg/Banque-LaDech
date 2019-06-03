@@ -47,9 +47,9 @@ public class ConseillerDao {
         PreparedStatement requette = connexion.prepareStatement(sql);
         
         requette.setString(1, c.getNom());
-        requette.setString(1, c.getPrenom());
-        requette.setString(1, c.getMail());
-        requette.setString(1, c.getMdp());
+        requette.setString(2, c.getPrenom());
+        requette.setString(3, c.getMail());
+        requette.setString(4, c.getMdp());
         
         requette.execute();
   
