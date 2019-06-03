@@ -20,7 +20,7 @@ import java.util.List;
 public class ClientDao {
     public static Client getByLoginPass(String login, String mdp) throws SQLException {
         Client cl = null;
-        String sql = "select * from client where mail=? AND password=?";
+        String sql = "select * from client where mail=? AND mdp=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -40,7 +40,7 @@ public class ClientDao {
     }
     
     public static void insert(Client cl) throws SQLException{
-        String sql = "insert into client (nom, prenom, mail, password) VALUES (?,?,?,?)";
+        String sql = "insert into client (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);

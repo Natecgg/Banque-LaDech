@@ -21,7 +21,7 @@ import java.util.List;
 public class AdministrateurDao {
     public static Admin getByLoginPass(String login, String mdp) throws SQLException {
         Admin a = null;
-        String sql = "select * from admin where mail=? AND password=?";
+        String sql = "select * from admin where mail=? AND mdp=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -31,7 +31,7 @@ public class AdministrateurDao {
         
         if(rs.next()){
                 a = new Admin();
-                a.setId(rs.getInt("idAdmin"));
+                a.setId(rs.getInt("idadmin"));
                 a.setMail(rs.getString("mail"));
         }
         
@@ -39,7 +39,7 @@ public class AdministrateurDao {
     }
     
     public static void insert(Admin a) throws SQLException{
-        String sql = "insert into admin (nom, prenom, mail, password) VALUES (?,?,?,?)";
+        String sql = "insert into admin (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
@@ -61,7 +61,7 @@ public class AdministrateurDao {
         
         while(rs.next()){
             Admin a = new Admin();
-            a.setId(rs.getInt("idAdmin"));
+            a.setId(rs.getInt("idadmin"));
             a.setMail(rs.getString("mail"));
             admins.add(a);
         }
