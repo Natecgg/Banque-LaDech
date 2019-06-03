@@ -21,7 +21,7 @@ import java.util.List;
 public class ConseillerDao {
     public static Conseiller getByLoginPass(String login, String mdp) throws SQLException {
         Conseiller c = null;
-        String sql = "select * from conseiller where mail=? AND password=?";
+        String sql = "select * from conseiller where mail=? AND mdp=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -41,7 +41,7 @@ public class ConseillerDao {
     }
     
     public static void insert(Conseiller c) throws SQLException{
-        String sql = "insert into conseiller (nom, prenom, mail, password) VALUES (?,?,?,?)";
+        String sql = "insert into conseiller (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
