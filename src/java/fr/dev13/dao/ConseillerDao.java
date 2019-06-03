@@ -20,8 +20,8 @@ import java.util.List;
  */
 public class ConseillerDao {
     public static Conseiller getByLoginPass(String login, String mdp) throws SQLException {
-        Conseiller u = null;
-        String sql = "select * from personne where mail=? AND password=?";
+        Conseiller c = null;
+        String sql = "select * from conseiller where mail=? AND password=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -30,26 +30,26 @@ public class ConseillerDao {
         ResultSet rs = requette.executeQuery();
         
         if(rs.next()){
-                u = new Conseiller();
-                u.setId(rs.getInt("idpersonne"));
-                u.setNom(rs.getString("nom"));
-                u.setPrenom(rs.getString("prenom"));
-                u.setMail(rs.getString("mail"));
+                c = new Conseiller();
+                c.setId(rs.getInt("idconseiller"));
+                c.setNom(rs.getString("nom"));
+                c.setPrenom(rs.getString("prenom"));
+                c.setMail(rs.getString("mail"));
         }
         
-        return u;
+        return c;
     }
     
-    public static void insert(Conseiller u) throws SQLException{
-        String sql = "insert into person (nom, prenom, mail, password) VALUES (?,?,?,?)";
+    public static void insert(Conseiller c) throws SQLException{
+        String sql = "insert into conseiller (nom, prenom, mail, password) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
         
-        requette.setString(1, u.getNom());
-        requette.setString(1, u.getPrenom());
-        requette.setString(1, u.getMail());
-        requette.setString(1, u.getMdp());
+        requette.setString(1, c.getNom());
+        requette.setString(2, c.getPrenom());
+        requette.setString(3, c.getMail());
+        requette.setString(4, c.getMdp());
         
         requette.execute();
   

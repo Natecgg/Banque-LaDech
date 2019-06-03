@@ -5,7 +5,7 @@
  */
 package fr.dev13.dao;
 
-import fr.dev13.model.Administrateur;
+import fr.dev13.model.Admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -19,9 +19,9 @@ import java.util.List;
  * @author ESIC
  */
 public class AdministrateurDao {
-    public static Administrateur getByLoginPass(String login, String mdp) throws SQLException {
-        Administrateur u = null;
-        String sql = "select * from personne where mail=? AND password=?";
+    public static Admin getByLoginPass(String login, String mdp) throws SQLException {
+        Admin a = null;
+        String sql = "select * from admin where mail=? AND password=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -30,47 +30,41 @@ public class AdministrateurDao {
         ResultSet rs = requette.executeQuery();
         
         if(rs.next()){
-                u = new Administrateur();
-                u.setId(rs.getInt("idpersonne"));
-                u.setNom(rs.getString("nom"));
-                u.setPrenom(rs.getString("prenom"));
-                u.setMail(rs.getString("mail"));
+                a = new Admin();
+                a.setId(rs.getInt("idAdmin"));
+                a.setMail(rs.getString("mail"));
         }
         
-        return u;
+        return a;
     }
     
-    public static void insert(Administrateur u) throws SQLException{
-        String sql = "insert into person (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
+    public static void insert(Admin a) throws SQLException{
+        String sql = "insert into admin (nom, prenom, mail, password) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
-        
-        requette.setString(1, u.getNom());
-        requette.setString(1, u.getPrenom());
-        requette.setString(1, u.getMail());
-        requette.setString(1, u.getMdp());
+       
+        requette.setString(1, a.getMail());
+        requette.setString(2, a.getMdp());
         
         requette.execute();
   
     }
     
-    public static List<Administrateur> getAllAdministrateurs() throws SQLException {
-        List<Administrateur> users = new ArrayList<>();
+    public static List<Admin> getAllAdministrateurs() throws SQLException {
+        List<Admin> admins = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
-        String sql = "select * from personne";
+        String sql = "select * from admin";
         Statement requette = connexion.createStatement();
         ResultSet rs = requette.executeQuery(sql);
         
         
         while(rs.next()){
-            Administrateur u = new Administrateur();
-            u.setId(rs.getInt("idpersonne"));
-            u.setNom(rs.getString("nom"));
-            u.setPrenom(rs.getString("prenom"));
-            u.setMail(rs.getString("mail"));
-            users.add(u);
+            Admin a = new Admin();
+            a.setId(rs.getInt("idAdmin"));
+            a.setMail(rs.getString("mail"));
+            admins.add(a);
         }
-        return users;
+        return admins;
     }
 }

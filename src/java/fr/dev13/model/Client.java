@@ -5,28 +5,36 @@
  */
 package fr.dev13.model;
 
+import java.sql.Date;
+
 /**
  *
  * @author ESIC
  */
 public class Client {
 
+    private int id;
     private String nom;
     private String prenom;
     private String mail;
-    private int id;
     private String mdp;
     private int idConseiller;
+    private int idCompteBancaire;
+    private Date derniereConnexion;
+    
     
     public Client(){
     }
     
-    public Client(int id, String nom, String prenom, String mail, int idConseiller){
+    public Client(int id, String nom, String prenom, String mail, int idConseiller,int idCompteBancaire, Date derniereConnexion){
         this.id=id;
         this.mail=mail;
         this.nom=nom;
         this.prenom=prenom;
         this.idConseiller=idConseiller;
+        this.idCompteBancaire = idCompteBancaire;
+        this.derniereConnexion=derniereConnexion;
+        
     }
     
     
@@ -36,7 +44,62 @@ public class Client {
         this.nom=nom;
         this.prenom=prenom;
     }
+    public int getId() {
+        return id;
+    }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+    public String getNom() {
+        return nom;
+    }
+    
+    public void setNom(String string) {
+        nom = string;
+    }
+    
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String string) {
+        prenom = string;
+    }
+    
+    public String getMail() {
+        return mail;
+    }
+    
+    public void setMail(String string) {
+        mail = string;
+            
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public void setMdp(String mdp) {
+        this.mdp = mdp;
+    }
+    
+    public Date getDerniereConnexion() {
+        return derniereConnexion;
+    }
+
+    public void setDerniereConnexion(Date derniereConnexion) {
+        this.derniereConnexion = derniereConnexion;
+    }
+
+    public int getIdCompteBancaire() {
+        return idCompteBancaire;
+    }
+
+    public void setIdCompteBancaire(int idCompteBancaire) {
+        this.idCompteBancaire = idCompteBancaire;
+    }
     public int getIdConseiller() {
         return idConseiller;
     }
@@ -45,48 +108,11 @@ public class Client {
         this.idConseiller = idConseiller;
     }
      
-    public void setMail(String string) {
-        mail = string;
-    }
-
-    public void setNom(String string) {
-        nom = string;
-    }
-
-    public void setPrenom(String string) {
-        prenom = string;
-    }
-
-    public void setId(int aInt) {
-        id = aInt;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-    
-    public void setMdp(String string) {
-        mdp = string;
-    }
-
-    public String getMdp() {
-        return mdp;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public String getMail() {
-        return mail;
-    }
-
-    public int getId() {
-        return id;
-    }
     
     public String infoClient() {
         return("Je m'appelle "+prenom+" "+nom+".");
     }
+
+    
     
 }
