@@ -30,7 +30,7 @@ public class ClientDao {
         
         if(rs.next()){
                 u = new Client();
-                u.setId(rs.getInt("idpersonne"));
+                u.setId(rs.getInt("idclient"));
                 u.setNom(rs.getString("nom"));
                 u.setPrenom(rs.getString("prenom"));
                 u.setMail(rs.getString("mail"));

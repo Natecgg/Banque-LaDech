@@ -85,7 +85,7 @@ public class Client {
         return id;
     }
     
-    public String infoCleint() {
+    public String infoClient() {
         return("Je m'appelle "+prenom+" "+nom+".");
     }
     
