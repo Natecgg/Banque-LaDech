@@ -41,7 +41,7 @@ public class ConseillerDao {
     }
     
     public static void insert(Conseiller u) throws SQLException{
-        String sql = "insert into person (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
+        String sql = "insert into person (nom, prenom, mail, password) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
@@ -64,12 +64,12 @@ public class ConseillerDao {
         
         
         while(rs.next()){
-            Conseiller u = new Conseiller();
-            u.setId(rs.getInt("idpersonne"));
-            u.setNom(rs.getString("nom"));
-            u.setPrenom(rs.getString("prenom"));
-            u.setMail(rs.getString("mail"));
-            conseillers.add(u);
+            Conseiller c = new Conseiller();
+            c.setId(rs.getInt("idconseiller"));
+            c.setNom(rs.getString("nom"));
+            c.setPrenom(rs.getString("prenom"));
+            c.setMail(rs.getString("mail"));
+            conseillers.add(c);
         }
         return conseillers;
     }
