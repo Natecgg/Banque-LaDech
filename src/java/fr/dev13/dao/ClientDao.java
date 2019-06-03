@@ -17,9 +17,9 @@ import java.util.List;
  *
  * @author ESIC
  */
-public class UserDao {
-    public static User getByLoginPass(String login, String mdp) throws SQLException {
-        User u = null;
+public class ClientDao {
+    public static Client getByLoginPass(String login, String mdp) throws SQLException {
+        Client u = null;
         String sql = "select * from personne where mail=? AND password=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
@@ -29,7 +29,7 @@ public class UserDao {
         ResultSet rs = requette.executeQuery();
         
         if(rs.next()){
-                u = new User();
+                u = new Client();
                 u.setId(rs.getInt("idpersonne"));
                 u.setNom(rs.getString("nom"));
                 u.setPrenom(rs.getString("prenom"));
@@ -39,7 +39,7 @@ public class UserDao {
         return u;
     }
     
-    public static void insert(User u) throws SQLException{
+    public static void insert(Client u) throws SQLException{
         String sql = "insert into person (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
@@ -54,8 +54,8 @@ public class UserDao {
   
     }
     
-    public static List<User> getAllUsers() throws SQLException {
-        List<User> users = new ArrayList<>();
+    public static List<Client> getAllClients() throws SQLException {
+        List<Client> users = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
         String sql = "select * from personne";
         Statement requette = connexion.createStatement();
@@ -63,7 +63,7 @@ public class UserDao {
         
         
         while(rs.next()){
-            User u = new User();
+            Client u = new Client();
             u.setId(rs.getInt("idpersonne"));
             u.setNom(rs.getString("nom"));
             u.setPrenom(rs.getString("prenom"));
