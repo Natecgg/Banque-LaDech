@@ -19,7 +19,7 @@
         <h3> Espace  </h3> 
         <h5> Déconexion </h5>
        </div>
-        <img src="images/pause3.png" width="20" lengh="200"  >
+        <img src="Images/monnaie(1).jpg" alt=""/>
         <br><br><br><br>
         
         <h3> Votre solde actuel est :</h3> <br>
