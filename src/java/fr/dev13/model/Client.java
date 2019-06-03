@@ -108,7 +108,7 @@ public class Client {
         this.idConseiller = idConseiller;
     }
      
-   
+    
     public String infoClient() {
         return("Je m'appelle "+prenom+" "+nom+".");
     }

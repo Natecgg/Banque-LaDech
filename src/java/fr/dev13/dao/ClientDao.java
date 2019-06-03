@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class ClientDao {
     public static Client getByLoginPass(String login, String mdp) throws SQLException {
-        Client u = null;
-        String sql = "select * from personne where mail=? AND password=?";
+        Client cl = null;
+        String sql = "select * from client where mail=? AND password=?";
         Connection connexion = ConnectDb.getConnection();
         PreparedStatement requette = connexion.prepareStatement(sql);
         requette.setString(1, login);
@@ -29,47 +29,47 @@ public class ClientDao {
         ResultSet rs = requette.executeQuery();
         
         if(rs.next()){
-                u = new Client();
-                u.setId(rs.getInt("idpersonne"));
-                u.setNom(rs.getString("nom"));
-                u.setPrenom(rs.getString("prenom"));
-                u.setMail(rs.getString("mail"));
+                cl = new Client();
+                cl.setId(rs.getInt("idclient"));
+                cl.setNom(rs.getString("nom"));
+                cl.setPrenom(rs.getString("prenom"));
+                cl.setMail(rs.getString("mail"));
         }
         
-        return u;
+        return cl;
     }
     
-    public static void insert(Client u) throws SQLException{
-        String sql = "insert into person (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
+    public static void insert(Client cl) throws SQLException{
+        String sql = "insert into client (nom, prenom, mail, password) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
         
-        requette.setString(1, u.getNom());
-        requette.setString(1, u.getPrenom());
-        requette.setString(1, u.getMail());
-        requette.setString(1, u.getMdp());
+        requette.setString(1, cl.getNom());
+        requette.setString(1, cl.getPrenom());
+        requette.setString(1, cl.getMail());
+        requette.setString(1, cl.getMdp());
         
         requette.execute();
   
     }
     
     public static List<Client> getAllClients() throws SQLException {
-        List<Client> users = new ArrayList<>();
+        List<Client> clients = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
-        String sql = "select * from personne";
+        String sql = "select * from client";
         Statement requette = connexion.createStatement();
         ResultSet rs = requette.executeQuery(sql);
         
         
         while(rs.next()){
-            Client u = new Client();
-            u.setId(rs.getInt("idpersonne"));
-            u.setNom(rs.getString("nom"));
-            u.setPrenom(rs.getString("prenom"));
-            u.setMail(rs.getString("mail"));
-            users.add(u);
+            Client cl = new Client();
+            cl.setId(rs.getInt("idclient"));
+            cl.setNom(rs.getString("nom"));
+            cl.setPrenom(rs.getString("prenom"));
+            cl.setMail(rs.getString("mail"));
+            clients.add(cl);
         }
-        return users;
+        return clients;
     }
 }
