@@ -91,7 +91,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                     </div>
                                     <br> 
                                  </form>
-                                    <p class="text-info">Mot de passe oublié?</p>
+                                    <a href="""class="text-info">Mot de passe oublié?</a>
                                 <p class="text-danger">${msg}
                                     
                                 </p>
