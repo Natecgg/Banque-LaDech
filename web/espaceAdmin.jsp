@@ -19,23 +19,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-         <body style="background-color: lightgray">
+         <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
+             
+             
           <div class="container"> 
               >
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
-            
-        <h3> Espace Conseiller de : </h3> 
-       
+        <center>  
+        <h3> Espace Administrateur </h3> 
+       </center> 
        </div>
    
-          <div class="container"> <h3>Tableau clients</h3>
+          <div class="container"> <h3>Tableau Employés</h3>
         <table class="table">
             <thead class="thead-dark"> 
                 <tr>
             <th> Nom </th>
             <th> Prenom</th>
             <th> Mail</th>
-            
+     
             </tr>
             </thead>
             <tbody>
