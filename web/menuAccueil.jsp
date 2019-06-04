@@ -26,6 +26,13 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
         <title>Banque La Dech - Accueil</title>
     </head>
+    
+    <style>
+        .nav-item{
+            width: 100%;
+        }
+        
+    </style>
     <body>
         
  <!--Navbar-->       
@@ -75,7 +82,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     <br>
                     <div class="col d-flex justify-content-center">
                         
-                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30); margin-top: -10%;">
+                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
                                                        
                             
                             <div class="card-body" style="position:relative; top:-10%;">
