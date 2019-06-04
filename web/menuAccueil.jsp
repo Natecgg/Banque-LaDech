@@ -26,7 +26,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
         <title>Banque La Dech - Accueil</title>
     </head>
-    <body style="background-color: goldenrod">
+    <body style="background-color: goldenrod; opacity:0.6;">
         
  <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -84,7 +84,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                 
                                 <form action="connexion" method="POST">
                                     <div class="form-group">
-                                        <input name="login" class="form-control" type="email" placeholder="login" required>
+                                        <input name="login" value ="${param['login']}" class="form-control" type="email" placeholder="login" required>
                                     </div>
                                     
                                     <div class="form-group">
