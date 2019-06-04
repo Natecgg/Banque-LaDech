@@ -25,19 +25,19 @@
                 <p>Avec Banque LaDech, vous pouvez effectuer votre demande de crédit immobilier 
                         100% en ligne et bénéficier des taux fixes parmi les plus bas du marché.</p>
                 <br>
-                <p style="color: steelblue"><b>Je simule mon crédit immobilier</b></p>
+                <p style="color: darkblue"><b>Je simule mon crédit immobilier</b></p>
             </div>
             <div class="col-6 bd-example container text-center">     
                 <br><br>
-                <div class="text-center"><h1 style="color: steelblue"><b>Banque LaDech</b></h1></div>
+                <div class="text-center"><h1 style="color: fuchsia; font-size: 80px"><b>Banque LaDech</b></h1></div>
                 <br><br>
                 <img src="Images/bank.jpg">
                 <br><br><br>
                 <div class="text-center"><h3><i>"Là où votre argent est heureux"</i></h3></div>
             </div>
-            <div class="col container text-center" style="margin: 1%">
+            <div class="col container text-center" style="margin: 3%">
                 <br><br><br>
-                <img src="Images/100.PNG" class="" alt="...">
+                 <p style="font-size: 80px; color: darkblue"><b>100€*<br>OFFERTS</b></p>
                 <h5><b>Pour toute première ouverture de compte avec carte bancaire </b></h5>
                 <br><br>
                 <p style="color: gray">* Voir conditions sur le site</p>
