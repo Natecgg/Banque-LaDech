@@ -87,7 +87,7 @@ public class ClientDao {
         // renvoie 3 si le com)pte à créditer n'a pas été trouvé
         String sql1 = "SELECT compteActif, solde, demandeDecouvert FROM compte_bancaire WHERE idcompteBancaire ?;";
         String sql2 = "SELECT solde FROM compte_bancaire WHERE idcompteBancaire = ?;";
-        String sql3 = "UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?); UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?);";
+        String sql3 = "UPDATE compte_bancaire SET solde = ? WHERE idcompteBancaire = ?; UPDATE compte_bancaire SET solde = ? WHERE idcompteBancaire = ?;";
 
         Connection connexion = ConnectDb.getConnection();
         
@@ -122,13 +122,17 @@ public class ClientDao {
             soldeCrediteur = rs.getDouble("solde");
             requette = connexion.prepareStatement(sql3);
             requette.setDouble(1, soldeDebiteur-montant); 
-            requette.setInt(2, debiteur.getId());
+            requette.setInt(2, debiteur.getIdCompteBancaire());
             requette.setDouble(3, soldeCrediteur+montant);
             requette.setInt(4, idCompteCrediteur);
             requette.execute();
             
-            sql1="INSERT INTO operation (libelle, beneficiaire, montant-operation, idcompte_bancaire) VALUES" +
-                  "(virement, ?, ?, ?, ?)" ;
+            sql1 = "INSERT INTO operation (libelle, beneficiaire, montant-operation, idcompte_bancaire) VALUES" +
+                  "(virement, ?, ?, ?)" ;
+            requette = connexion.prepareStatement(sql1);
+            requette.setInt(1, idCompteCrediteur); 
+            requette.setDouble(2, montant); 
+            requette.setInt(3, debiteur.getIdCompteBancaire()); 
             
             return 0;
             }
@@ -136,6 +140,70 @@ public class ClientDao {
                 return 3;
             }
         }
+
+    }
+    
+    public static int retrait(Client debiteur, double montant) throws SQLException{
+        // la fonction renvoie 0 si le virement a bien été effectué, renvoie 1 si le compte du client est bloqué, renvoie 2 si le client ne dsipose pas de suffisamment de fonds
+        String sql1 = "SELECT compteActif, solde, demandeDecouvert FROM compte_bancaire WHERE idcompteBancaire ?;";
+        String sql2 = "UPDATE compte_bancaire SET solde = ? WHERE idcompteBancaire = ?";
+
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql1);
+        
+        requette.setInt(1, debiteur.getIdCompteBancaire());     
+        requette.execute();
+        
+        double soldeDebiteur=0;
+        double decouvertDebiteur=0;
+        int actifDebiteur=0;
+        
+        ResultSet rs = requette.executeQuery();
+        
+        soldeDebiteur = rs.getDouble("solde");
+        decouvertDebiteur = rs.getDouble("demandeDecouvert");
+        actifDebiteur = rs.getInt("compteActif");
+
+        if(actifDebiteur==0){
+            return 1;
+        }
+        else if (soldeDebiteur-montant<-decouvertDebiteur){
+            return 2;
+        }
+        else{ 
+            requette = connexion.prepareStatement(sql2);
+            requette.setDouble(1, soldeDebiteur-montant); 
+            requette.setInt(2, debiteur.getIdCompteBancaire());
+            requette.execute();
+            
+            sql1 = "INSERT INTO operation (libelle, montant-operation, idcompte_bancaire) VALUES" +
+                  "(retrait, ?, ?, ?)" ;
+            requette = connexion.prepareStatement(sql1); 
+            requette.setDouble(1, montant); 
+            requette.setInt(2, debiteur.getIdCompteBancaire()); 
+            
+            return 0;
+            }
+
+    }
+    
+    public static void depot(Client debiteur, double montant) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET solde = solde + ? WHERE idcompteBancaire = ?";
+
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setDouble(1, montant);     
+        requette.setInt(2, debiteur.getIdCompteBancaire());  
+        requette.execute();
+        
+        sql = "INSERT INTO operation (libelle, montant-operation, idcompte_bancaire) VALUES" +
+                  "(dépôt, ?, ?)" ;
+        requette = connexion.prepareStatement(sql);
+        requette.setDouble(1, montant); 
+        requette.setInt(2, debiteur.getIdCompteBancaire()); 
 
     }
     
