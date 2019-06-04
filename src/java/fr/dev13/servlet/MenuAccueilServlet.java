@@ -92,7 +92,7 @@ public class MenuAccueilServlet extends HttpServlet {
         
         if (cl!=null){ 
             request.getSession(true).setAttribute("client", cl);
-            response.sendRedirect("espaceclient");
+            response.sendRedirect("espace_client");
         }
         else{ // si on n'a pas trouvé de client on essaie de trouver un conseiller
             
@@ -106,7 +106,7 @@ public class MenuAccueilServlet extends HttpServlet {
             
             if (c!=null){ // si on n'a pas trouvé de conseiller on essaie de trouver un admin
                 request.getSession(true).setAttribute("conseiller", cl);
-                response.sendRedirect("espaceconseiller");
+                response.sendRedirect("espace_conseiller");
             } else {
                 Admin a = null;
                 try {
@@ -116,9 +116,9 @@ public class MenuAccueilServlet extends HttpServlet {
                     out.println(e.getMessage());
                 }
                 
-                if (a!=null){ // si on n'a pas trouvé de conseiller on essaie de trouver un admin
+                if (a!=null){
                     request.getSession(true).setAttribute("admin", cl);
-                    response.sendRedirect("espaceadministrateur");
+                    response.sendRedirect("espace_administrateur");
                 } else{
                     request.setAttribute("msg", "Identifiant ou mot de passe incorrect");
                     request.getRequestDispatcher("/menuAccueil.jsp").forward(request, response);

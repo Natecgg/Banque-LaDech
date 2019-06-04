@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ESIC
  */
-@WebServlet(name = "EspaceConseillerServlet", urlPatterns = {"/EspaceConseillerServlet"})
+@WebServlet(name = "EspaceConseillerServlet", urlPatterns = {"/espace_conseiller"})
 public class EspaceConseillerServlet extends HttpServlet {
 
     /**

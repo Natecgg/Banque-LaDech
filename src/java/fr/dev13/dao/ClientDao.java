@@ -43,17 +43,17 @@ public class ClientDao {
         return cl;
     }
     
-    public static void creerClient(String nom, String prenom, String mail, String mdp, int idconseiller, double solde) throws SQLException{
+    public static Client creerClient(Client cl, double solde) throws SQLException{
         String sql = "insert into client (nom, prenom, mail, mdp, idconseiller, idcompteBancaire) VALUES (?,?,?,?,?)"; // le mail est unique donc si le client existe déjà la bd renverra une exception
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
         
-        requette.setString(1, nom);
-        requette.setString(2, prenom);
-        requette.setString(3, mail);
-        requette.setString(4, mdp);
-        requette.setInt(5, idconseiller);
+        requette.setString(1, cl.getNom());
+        requette.setString(2, cl.getPrenom());
+        requette.setString(3, cl.getMail());
+        requette.setString(4, cl.getMdp());
+        requette.setInt(5, cl.getIdConseiller());
         requette.setInt(5, 0);
         
         requette.execute();
@@ -73,8 +73,11 @@ public class ClientDao {
         sql = "UPDATE client SET idcompteBancaire = ? WHERE mail = ?;";
         requette = connexion.prepareStatement(sql);
         requette.setInt(1, idcompteBancaire);
-        requette.setString(2, mail);
+        requette.setString(2, cl.getMail());
         requette.execute();
+        
+        cl.setIdCompteBancaire(idcompteBancaire);
+        return(cl);
 
     }
     
@@ -99,11 +102,10 @@ public class ClientDao {
         
         ResultSet rs = requette.executeQuery();
         
-        if(rs.next()){
-                soldeDebiteur = rs.getDouble("solde");
-                decouvertDebiteur = rs.getDouble("demandeDecouvert");
-                actifDebiteur = rs.getInt("compteActif");
-        }
+        soldeDebiteur = rs.getDouble("solde");
+        decouvertDebiteur = rs.getDouble("demandeDecouvert");
+        actifDebiteur = rs.getInt("compteActif");
+
         
         if(actifDebiteur==0){
             
@@ -115,9 +117,7 @@ public class ClientDao {
             requette = connexion.prepareStatement(sql2);
             requette.setInt(1, idCompteCrediteur); 
             requette.execute();
-            if(rs.next()){
-                soldeCrediteur = rs.getDouble("solde");
-            }
+            soldeCrediteur = rs.getDouble("solde");
             requette = connexion.prepareStatement(sql3);
             requette.setDouble(1, soldeDebiteur-montant); 
             requette.setInt(2, debiteur.getId());

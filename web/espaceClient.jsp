@@ -3,6 +3,7 @@
     Created on : 3 juin 2019, 16:22:13
     Author     : ESIC
 --%>
+<%@page import="fr.dev13.model.Client"%>
 <%@include file="menuIntra.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,7 +16,9 @@
         
           <div class="container"> 
               
-<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.Solde} $ {moi.prenom} -->
+              <% Client cl = (Client) request.getAttribute("client"); %> 
+              ${client}
+<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.Solde} $ {moi.prenom}  {moi.nom} -->
             
         <h3> Espace client de Mr ou Mme :  </h3> 
       
