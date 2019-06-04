@@ -39,7 +39,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
     <ul class="navbar-nav">
         
       <li class="nav-item">
-        <a class="nav-link" href="actualites.jsp" id="menuActualite">Actualités<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="actualites.jsp" id="menuActualites">Actualités<span class="sr-only">(current)</span></a>
       </li>
 
 

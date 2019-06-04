@@ -1,10 +1,11 @@
 <%-- 
-    Document   : actualites
-    Created on : 4 juin 2019, 10:40:43
+    Document   : videos
+    Created on : 4 juin 2019, 11:45:44
     Author     : ESIC
 --%>
-<%@include file="menuAccueil.jsp" %>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@include file="menuAccueil.jsp"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,24 +14,12 @@
     </head>
     <body>
             <style>
-        #menuActualites{
+        #menuVideos{
            color:white;
            font-weight: bold;
            text-decoration: underline;
         }
         
-           </style>
-           
-           
-        <h1>Hello World!</h1>
+    </style>
     </body>
 </html>
-
-   
-    
- 
- 
- 
-
- 
-    
