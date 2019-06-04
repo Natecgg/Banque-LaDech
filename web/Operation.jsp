@@ -21,6 +21,8 @@
     <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
 
         
+       if( user.connect == admin){}  
+        
         <div class="container">
             
             <h1>Virement </h1>
