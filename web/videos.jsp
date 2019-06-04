@@ -12,8 +12,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body style="background-image: url('Images/background-video.jpg'); background-size: cover;">
-            <style>
+    
+      <style>
         #menuVideos{
            color:white;
            font-weight: bold;
@@ -22,6 +22,12 @@
         
     </style>
     
+    <body style="background-image: url('Images/background-video.jpg'); background-size: cover;">
+          
+        <div class="container card" style="background-color: rgba (255,255,255,0.5); margin-top:3%; background-size:cover; border-radius:15px; height:1000px;">
+            <p>De</p>
+            
+        </div> 
     
     
     </body>
