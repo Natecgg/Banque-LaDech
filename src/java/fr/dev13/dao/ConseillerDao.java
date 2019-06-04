@@ -5,6 +5,7 @@
  */
 package fr.dev13.dao;
 
+import fr.dev13.model.CollectionClient;
 import fr.dev13.model.Conseiller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -115,4 +116,20 @@ public class ConseillerDao {
         }
         return conseillers;
     }
+    
+        public static List<CollectionClient> getClientsOfConseiller(Conseiller c) throws SQLException {
+        List<CollectionClient> collectionClients = new ArrayList<>();
+        Connection connexion = ConnectDb.getConnection();
+        String sql = "SELECT nom, prenom, solde, mail, idcompteBancaire FROM client INNER JOIN compte_bancaire ON client.idcompteBancaire=compte_bancaire.idcompteBancaire";
+        Statement requette = connexion.createStatement();
+        ResultSet rs = requette.executeQuery(sql);
+        
+        while(rs.next()){
+            CollectionClient cl = new CollectionClient(rs.getString("nom"), rs.getString("prenom"), rs.getString("mail"), rs.getDouble("solde"), rs.getInt("idcompteBancaire"));
+            collectionClients.add(cl);
+        }
+        
+        return collectionClients;
+        
+        }
 }
