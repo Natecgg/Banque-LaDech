@@ -24,7 +24,7 @@
     
     <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
        
-        <div class="container" style="margin-top:5%; background-color: rgba(0,0,0,0.5); background-size:cover; position:absolute; top: 5%; left:20%; border-radius:25px; ">
+        <div class="container" style="margin-top:5%; background-color: rgba(0,0,0,0.5); background-size:cover; top: 5%; left:20%; margin:auto; margin-top:2%">
             <div class="header" style="text-align:center; color: white;"><h3>Suivez la bourse presque en directe</h3></div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 
@@ -57,10 +57,10 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-            
+                  
             
             
         </div>
-       
+       <br><br> 
     </body>
 </html>

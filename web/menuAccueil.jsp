@@ -68,7 +68,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:-100px;">
   <div class="modal-dialog" role="document" >
       
-    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
+    <div class="modal-content" style=" border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
        
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
