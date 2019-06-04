@@ -4,7 +4,7 @@
     Author     : ESIC
 --%>
 <%@page import="fr.dev13.model.Client"%>
-<%@include file="menuIntra.jsp" %>
+<%@include file="menuIntraCli.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,7 +21,7 @@
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.Solde} $ {moi.prenom}  {moi.nom} -->
             
         <h3> Espace client de Mr ou Mme :  </h3> 
-      
+        <br> <br>
        </div>
         <div class="container">
             <center>

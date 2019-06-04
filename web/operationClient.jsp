@@ -3,7 +3,7 @@
     Created on : 4 juin 2019, 09:19:08
     Author     : ESIC
 --%>
-
+<%@include file="menuIntraCli.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -21,8 +21,23 @@
         <title>Opération client</title>
     </head>
     <body>
+    <center>
         <h1>Toutes vos oprérations et bien plus encore!</h1>
+          </center> 
+     <br>
+    <div class="container">
+            
+            <h1>Virement </h1>
+          
+            
+        </div>   
         
+          <div class="container">
+            
+            <h1>Dépot </h1>
+          
+            
+        </div>   
         <br><br>
         
         
