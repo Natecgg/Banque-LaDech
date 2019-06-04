@@ -23,23 +23,29 @@
     </style>
     
     <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
-        
-        <div class="container" style="margin-top:5%;background-color: silver; height:50rem; width:100rem;">
+       
+        <div class="container" style="margin-top:5%; background-color: rgba(0,0,0,0.5); background-size:cover; position:absolute; top: 5%; left:20%; border-radius:25px; ">
+            <div class="header" style="text-align:center; color: white;"><h3>Suivez la bourse presque en directe</h3></div>
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-  <ol class="carousel-indicators">
+                
+                <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
   </ol>
+                   
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="..." alt="First slide">
+        <img class="d-block w-200" src="Images/bourse-CAC40.png" alt="First slide" style="margin: auto;">
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">CAC 40</div>
     </div>
     <div class="carousel-item">
-        <img class="d-block w-100" src="Images/bourse-Eurostoxx50.png" alt="Eurostoxx50" style="background-size:cover; ">
+        <img class="d-block w-300" src="Images/bourse-Eurostoxx50.png" alt="Eurostoxx50" style="margin: auto;">
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">EUROSTOXX 50</div>
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="..." alt="Third slide">
+        <img class="d-block w-200" src="Images/bourse-DowJones.png" alt="Third slide" style="margin: auto;">
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">DOW JONES</div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
