@@ -28,7 +28,7 @@
           
         <div class="container card" style=" margin-top:3%; background-size:contain ;height:900px;  ">
          
-            <div class="card" style="width: 20rem; margin-top:5%; margin-left:4%; background-color: beige; position:absolute;">
+            <div class="card"  style="width: 20rem; margin-top:5%; margin-left:4%; background-color: beige; position:absolute;">
                 <div class="card-header" style="background-color: rgb (0,150,136); text-align: center; font-weight: bold;">Joue la comme MBAPPE</div>
   <iframe width="300" height="200"
 src="https://www.youtube.com/embed/42E0IdRAnoQ" style="margin:auto; margin-top:5%;" allowfullscreen>

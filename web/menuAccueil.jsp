@@ -71,36 +71,35 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
     <div class="modal-content" style=" border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
        
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;" >Accèder à votre compte</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="background-color: rgb(0,159,134);background-size:cover;">
+      <div class="modal-body">
 
                     <br>
                     <br>
                     <div class="col d-flex justify-content-center">
                         
-                        <div class="card text-center" style="width: 22rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
-                                                       
+                        <div class="card" style="width: 25rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
+                            <h3 style="margin:auto;">Accéder à votre espace</h3>                                   
                             
-                            <div class="card-body" style="position:relative; top:-10%;">
-                                <br> <br>
+                            <div class="card-body" style="position:relative; top:-15%;">
+                                <br> <br> <br>
                                 
                                 <form action="connexion" method="POST">
                                     <div class="form-group">
                                         <input name="login" value ="${param['login']}" class="form-control" type="email" placeholder="login" required>
                                     </div>
-                                    
+                                    <br>
                                     <div class="form-group">
                                         <input name="mdp" class="form-control" type="password" placeholder="password" required>
                                     </div>
-                                    <br> 
-                                 </form>
+                                                                  </form>
+                                    <div style="text-align:center;">
                                     <a href="" class="text-info">Mot de passe oublié?</a>
                                 <p class="text-danger">${msg}
-                                    
+                                    </div>
                                 </p>
                                 
                             </div>
@@ -108,7 +107,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     </div>
       </div>
      
-       <div style="text-align: center; padding-top: 1%;">
+       <div style="text-align: center; margin-bottom: 10%;">
         <button type="button" class="btn btn-primary btn-outline" >Se connecter</button>
        </div>
       
