@@ -30,7 +30,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
         
  <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="index.html"><img src="Images/logo.png" style="width: 70px;">BanqueLaDech</a>
+            <a class="navbar-brand" href="index.jsp"><img src="Images/logo.png" style="width: 70px;">BanqueLaDech</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -38,16 +38,16 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
   <div class="collapse navbar-collapse " id="navbarNav">
     <ul class="navbar-nav">
         
-      <li class="nav-item active">
-        <a class="nav-link" href="actualites">Actualités<span class="sr-only">(current)</span></a>
+      <li class="nav-item">
+        <a class="nav-link" href="actualites.jsp">Actualités<span class="sr-only">(current)</span></a>
       </li>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="#">Bourse</a>
+        <a class="nav-link" href="bourse.jsp">Bourse</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Vidéos</a>
+        <a class="nav-link" href="videos.jsp">Vidéos</a>
       </li>
     </ul>
   </div>
@@ -58,7 +58,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:50px;">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:-100px;">
   <div class="modal-dialog" role="document" >
       
     <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
@@ -73,9 +73,9 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
                     <br>
                     <br>
-                    <div class="col d-flex justify-content-center" style="margin-top:-8%;">
+                    <div class="col d-flex justify-content-center">
                         
-                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30);">
+                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30); margin-top: -10%;">
                                                        
                             
                             <div class="card-body" style="position:relative; top:-10%;">
