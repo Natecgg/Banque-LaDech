@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
+        
           <div class="container"> 
               
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
