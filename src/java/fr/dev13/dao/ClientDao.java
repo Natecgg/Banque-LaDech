@@ -35,7 +35,7 @@ public class ClientDao {
                 cl.setNom(rs.getString("nom"));
                 cl.setPrenom(rs.getString("prenom"));
                 cl.setMail(rs.getString("mail"));
-                java.sql.Date dateSql = rs.getDate("derniereconnexion");
+                java.sql.Date dateSql = rs.getDate("derniereConnexion");
                 cl.setDerniereConnexion(dateSql);
                 cl.setIdCompteBancaire(rs.getInt("idcompteBancaire"));
                 cl.setIdConseiller(rs.getInt("idconseiller"));
@@ -80,6 +80,28 @@ public class ClientDao {
         cl.setIdCompteBancaire(idcompteBancaire);
         return(cl);
 
+    }
+    
+    public static void deconnexion(Client cl) throws SQLException{
+        
+        String sql = "UPDATE client SET derniereConnexion = CURRENT_TIMESTAMP WHERE idclient = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, cl.getId());
+        requete.executeQuery();
+        
+    }
+    
+    public static java.util.Date getDerniereConnexion(Client cl) throws SQLException{
+        String sql = "select derniereConnexion from client WHERE idclient = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, cl.getId());
+        ResultSet rs = requete.executeQuery();
+        
+        java.sql.Date dateSql = rs.getDate("derniereConnexion");
+        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        return(dateJava);
     }
     
     public static int virement(int idCompteCrediteur, Client debiteur, double montant) throws SQLException{
