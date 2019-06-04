@@ -44,16 +44,16 @@
             </tr>
             </thead>
             <tbody>
-<!--                <c:forEach items="$ {allMembers}" var="membres"> 
+               <c:forEach items="$ ${liste}" var="clients"> 
                     <tr>    
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                        <td>$ {}</td>
+                        <td>${clients.nom}</td>
+                        <td>${clients.prenom}</td>
+                        <td>${clients.solde}</td>
+                        <td>${clients.idcompteBancaire}</td>
+                        <td>${clients.mail}</td>
                     
                     </tr>
-                </c:forEach>-->
+                </c:forEach>
                 
                 
                 
