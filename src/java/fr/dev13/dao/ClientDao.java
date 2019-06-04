@@ -34,24 +34,48 @@ public class ClientDao {
                 cl.setNom(rs.getString("nom"));
                 cl.setPrenom(rs.getString("prenom"));
                 cl.setMail(rs.getString("mail"));
+                java.sql.Date dateSql = rs.getDate("derniereconnexion");
+                cl.setDerniereConnexion(dateSql);
+                cl.setIdCompteBancaire(rs.getInt("idcompteBancaire"));
+                cl.setIdConseiller(rs.getInt("idconseiller"));
         }
         
         return cl;
     }
     
-    public static void insert(Client cl) throws SQLException{
-        String sql = "insert into client (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
+    public static void creerClient(String nom, String prenom, String mail, String mdp, int idconseiller, double solde) throws SQLException{
+        String sql = "insert into client (nom, prenom, mail, mdp, idconseiller, idcompteBancaire) VALUES (?,?,?,?,?)"; // le mail est unique donc si le client existe déjà la bd renverra une exception
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
         
-        requette.setString(1, cl.getNom());
-        requette.setString(2, cl.getPrenom());
-        requette.setString(3, cl.getMail());
-        requette.setString(4, cl.getMdp());
+        requette.setString(1, nom);
+        requette.setString(2, prenom);
+        requette.setString(3, mail);
+        requette.setString(4, mdp);
+        requette.setInt(5, idconseiller);
+        requette.setInt(5, 0);
         
         requette.execute();
-  
+        
+        sql = "insert into compte_bancaire (solde, compteActif, carteActive, demandeDecouvert) VALUES (?,?,?,?)";
+        requette = connexion.prepareStatement(sql);
+        requette.setDouble(1,solde);
+        requette.setInt(2, 1);
+        requette.setInt(3, 0);
+        requette.setDouble(4, 0);
+        
+        sql = "SELECT idcompteBancaire FROM compte_bancaire WHERE idcompteBancaire = LAST_INSERT_ID()";
+        Statement requete2 = connexion.createStatement();
+        ResultSet rs = requete2.executeQuery(sql);
+        
+        int idcompteBancaire= rs.getInt("idcompteBancaire");
+        sql = "UPDATE client SET idcompteBancaire = ? WHERE mail = ?;";
+        requette = connexion.prepareStatement(sql);
+        requette.setInt(1, idcompteBancaire);
+        requette.setString(2, mail);
+        requette.execute();
+
     }
     
     
