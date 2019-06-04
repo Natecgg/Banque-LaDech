@@ -12,6 +12,14 @@
         <title>JSP Page</title>
     </head>
     <body>
+            <style>
+        #menuActualites{
+           color:white;
+           font-weight: bold;
+           text-decoration: underline;
+        }
+        
+    </style>
         <h1>Hello World!</h1>
     </body>
 </html>
