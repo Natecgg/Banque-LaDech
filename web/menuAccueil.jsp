@@ -26,7 +26,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
         <title>Banque La Dech - Accueil</title>
     </head>
-    <body style="background-color: goldenrod;">
+    <body>
         
  <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
