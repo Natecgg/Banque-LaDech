@@ -11,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
         
          <center>
         <h1>Toutes vos oprérations et bien plus encore!</h1>
