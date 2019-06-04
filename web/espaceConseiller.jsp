@@ -5,7 +5,7 @@
 --%>
 
 
-<%@include file="menuIntra.jsp" %>
+<%@include file="menuIntraCon.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -28,7 +28,8 @@
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
             
         <h3> Espace Conseiller de : </h3> 
-       
+       <br>
+        <br>
        </div>
    
           <div class="container"> <h3>Tableau clients</h3>

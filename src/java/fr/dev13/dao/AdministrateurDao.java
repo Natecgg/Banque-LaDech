@@ -52,7 +52,7 @@ public class AdministrateurDao {
     }
     
     public static void activerDesactiverCompte(int idClient, int actif) throws SQLException{
-        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?) as a;";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
@@ -66,7 +66,7 @@ public class AdministrateurDao {
     
     
     public static void activerDesactiverCarte(int idClient, int actif) throws SQLException{
-        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?) as a;";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
