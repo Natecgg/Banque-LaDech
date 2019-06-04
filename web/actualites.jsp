@@ -12,7 +12,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Page d'actualités</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-actualites.jpg'); background-size: cover;">
+        
+            <style>
+        #menuActualites{
+           color:white;
+           font-weight: bold;
+           text-decoration: underline;
+        }
+        
+    </style>
         <br><br><br>    
       
             <div class="row">
