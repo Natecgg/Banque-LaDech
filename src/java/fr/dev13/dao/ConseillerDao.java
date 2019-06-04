@@ -37,12 +37,50 @@ public class ConseillerDao {
                 c.setNom(rs.getString("nom"));
                 c.setPrenom(rs.getString("prenom"));
                 c.setMail(rs.getString("mail"));
+                java.sql.Date dateSql = rs.getDate("derniereconnexion");
+                c.setDerniereConnexion(dateSql);
         }
         
         return c;
     }
     
- /*Ajoute un nouveau conseiller à la BD*/   
+    public static java.util.Date dateSql2Java(java.sql.Date dateSql){
+        java.util.Date dateJava;
+        if (dateSql==null)
+             dateJava = null;
+        else{
+            dateJava = new java.util.Date(dateSql.getTime());
+        }
+        return dateJava;
+    }
+    
+    
+    public static void activerDesactiverCompte(int idClient, int actif) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, actif);
+        requette.setInt(2, idClient);
+        
+        requette.execute();
+  
+    }
+    
+    public static void activerDesactiverCarte(int idClient, int actif) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, actif);
+        requette.setInt(2, idClient);
+        
+        requette.execute();
+  
+    }
+    
     public static void insert(Conseiller c) throws SQLException{
         String sql = "insert into conseiller (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();

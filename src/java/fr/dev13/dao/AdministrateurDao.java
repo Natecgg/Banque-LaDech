@@ -39,13 +39,40 @@ public class AdministrateurDao {
     }
     
     public static void insert(Admin a) throws SQLException{
-        String sql = "insert into admin (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
+        String sql = "insert into admin (mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
        
         requette.setString(1, a.getMail());
         requette.setString(2, a.getMdp());
+        
+        requette.execute();
+  
+    }
+    
+    public static void activerDesactiverCompte(int idClient, int actif) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, actif);
+        requette.setInt(2, idClient);
+        
+        requette.execute();
+  
+    }
+    
+    
+    public static void activerDesactiverCarte(int idClient, int actif) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, actif);
+        requette.setInt(2, idClient);
         
         requette.execute();
   

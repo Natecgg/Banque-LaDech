@@ -54,6 +54,56 @@ public class ClientDao {
   
     }
     
+    
+    
+    public static void virement(int idCompteCrediteur, Client debiteur, double montant) throws SQLException{
+        String sql1 = "SELECT compteActif, solde, demandeDecouvert FROM compte_bancaire WHERE idcompteBancaire ?;";
+        String sql2 = "SELECT solde FROM compte_bancaire WHERE idcompteBancaire = ?;";
+        String sql3 = "UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?); UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?);";
+
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql1);
+        
+        requette.setInt(1, debiteur.getIdCompteBancaire());     
+        requette.execute();
+        
+        double soldeDebiteur=0;
+        double decouvertDebiteur=0;
+        double soldeCrediteur=0;
+        int actifDebiteur=0;
+        
+        ResultSet rs = requette.executeQuery();
+        
+        if(rs.next()){
+                soldeDebiteur = rs.getDouble("solde");
+                decouvertDebiteur = rs.getDouble("demandeDecouvert");
+                actifDebiteur = rs.getInt("compteActif");
+        }
+        
+        if(actifDebiteur==0){
+            
+        }
+        else if (soldeDebiteur-montant<-decouvertDebiteur){
+            
+        }
+        else{
+            requette = connexion.prepareStatement(sql2);
+            requette.setInt(1, idCompteCrediteur); 
+            requette.execute();
+            if(rs.next()){
+                soldeCrediteur = rs.getDouble("solde");
+            }
+            requette = connexion.prepareStatement(sql3);
+            requette.setDouble(1, soldeDebiteur-montant); 
+            requette.setInt(2, debiteur.getId());
+            requette.setDouble(3, soldeCrediteur+montant);
+            requette.setInt(4, idCompteCrediteur);
+            requette.execute();
+        }
+
+    }
+    
     public static List<Client> getAllClients() throws SQLException {
         List<Client> clients = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
