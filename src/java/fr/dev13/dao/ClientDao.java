@@ -5,6 +5,7 @@
  */
 package fr.dev13.dao;
 import fr.dev13.model.Client;
+import fr.dev13.model.Operation;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -81,9 +82,9 @@ public class ClientDao {
 
     }
     
-    
-    
-    public static void virement(int idCompteCrediteur, Client debiteur, double montant) throws SQLException{
+    public static int virement(int idCompteCrediteur, Client debiteur, double montant) throws SQLException{
+        // la fonction renvoie 0 si le virement a bien été effectué, renvoie 1 si le compte du client est bloqué, renvoie 2 si le client ne dsipose pas de suffisamment de fonds
+        // renvoie 3 si le com)pte à créditer n'a pas été trouvé
         String sql1 = "SELECT compteActif, solde, demandeDecouvert FROM compte_bancaire WHERE idcompteBancaire ?;";
         String sql2 = "SELECT solde FROM compte_bancaire WHERE idcompteBancaire = ?;";
         String sql3 = "UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?); UPDATE compte_bancaire SET solde = ? WHERE (idcompteBancaire = ?);";
@@ -108,15 +109,16 @@ public class ClientDao {
 
         
         if(actifDebiteur==0){
-            
+            return 1;
         }
         else if (soldeDebiteur-montant<-decouvertDebiteur){
-            
+            return 2;
         }
         else{
             requette = connexion.prepareStatement(sql2);
             requette.setInt(1, idCompteCrediteur); 
             requette.execute();
+            if (rs.next()){  
             soldeCrediteur = rs.getDouble("solde");
             requette = connexion.prepareStatement(sql3);
             requette.setDouble(1, soldeDebiteur-montant); 
@@ -124,9 +126,41 @@ public class ClientDao {
             requette.setDouble(3, soldeCrediteur+montant);
             requette.setInt(4, idCompteCrediteur);
             requette.execute();
+            
+            sql1="INSERT INTO operation (libelle, beneficiaire, montant-operation, idcompte_bancaire) VALUES" +
+                  "(virement, ?, ?, ?, ?)" ;
+            
+            return 0;
+            }
+            else{
+                return 3;
+            }
         }
 
     }
+    
+    public static List<Operation> getHistorique(Client cl) throws SQLException {
+        List<Operation> historique = new ArrayList<>();
+        Connection connexion = ConnectDb.getConnection();
+        String sql = "SELECT * FROM operation WHERE idcompteBancaire=? ORDER BY date_operation";
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        requette.setInt(1, cl.getIdCompteBancaire());
+        ResultSet rs = requette.executeQuery(sql);
+        
+        while(rs.next()){
+            Operation o = new Operation();
+            o.setId(rs.getInt("idoperation"));    
+            o.setLibelle(rs.getString("libelle"));
+            o.setIdCompteBancaire(rs.getInt("idcompteBancaire"));
+            java.sql.Date dateSql = rs.getDate("date_operation");
+            o.setDateOperation(dateSql);
+            o.setMontantOperation(rs.getDouble("montant_operation"));
+            o.setIdBeneficiaire(rs.getInt("beneficiaire"));
+            historique.add(o);
+        }
+        return historique;
+    }
+ 
     
     public static List<Client> getAllClients() throws SQLException {
         List<Client> clients = new ArrayList<>();
