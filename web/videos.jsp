@@ -12,14 +12,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-video.jpg'); background-size: cover;">
             <style>
         #menuVideos{
            color:white;
            font-weight: bold;
            text-decoration: underline;
-        }
+        }   
         
     </style>
+    
+    
+    
     </body>
 </html>

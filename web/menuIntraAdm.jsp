@@ -1,8 +1,9 @@
 <%-- 
-    Document   : menuIntra
-    Created on : 3 juin 2019, 16:18:05
+    Document   : menuIntraAdm
+    Created on : 4 juin 2019, 13:48:41
     Author     : ESIC
 --%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,13 +35,9 @@
     <ul class="navbar-nav mr-auto">
         
       <li class="nav-item active">
-        <a class="nav-link" href="Opération.jsp">Opérations <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="">Opérations <span class="sr-only">(current)</span></a>
       </li>
-      
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Historique</a>
-      </li>
-     
+  
       <li class="nav-item active">
         <a class="nav-link disabled" href="#"></a>
       </li>
@@ -49,7 +46,7 @@
     <form class="form-inline my-2 my-lg-0">
         
          <li class="nav-item active">
-        <a class="nav-link disabled" href="#">Déconexion</a>
+        <a class="nav-link disabled" href="#index.jsp">Déconexion</a>
       </li>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">

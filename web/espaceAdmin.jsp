@@ -3,7 +3,7 @@
     Created on : 4 juin 2019, 10:59:42
     Author     : ESIC
 --%>
-<%@include file="menuIntra.jsp" %>
+<%@include file="menuIntraAdm.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -27,6 +27,8 @@
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
         <center>  
         <h3> Espace Administrateur </h3> 
+        <br>
+        <br>
        </center> 
        </div>
    

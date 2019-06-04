@@ -37,15 +37,15 @@
   <div class="carousel-inner">
     <div class="carousel-item active">
         <img class="d-block w-200" src="Images/bourse-CAC40.png" alt="First slide" style="margin: auto;">
-        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">CAC 40</div>
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white; margin-top:1%;">CAC 40</div>
     </div>
     <div class="carousel-item">
         <img class="d-block w-300" src="Images/bourse-Eurostoxx50.png" alt="Eurostoxx50" style="margin: auto;">
-        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">EUROSTOXX 50</div>
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white; margin-top:1%;">EUROSTOXX 50</div>
     </div>
     <div class="carousel-item">
         <img class="d-block w-200" src="Images/bourse-DowJones.png" alt="Third slide" style="margin: auto;">
-        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white;">DOW JONES</div>
+        <div class="footer" style="text-align:center; font-weight: bold; font-size:20px; color:white; margin-top:1%;">DOW JONES</div>
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
