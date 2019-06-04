@@ -116,7 +116,7 @@ public class MenuAccueilServlet extends HttpServlet {
                     out.println(e.getMessage());
                 }
                 
-                if (a!=null){ // si on n'a pas trouvé de conseiller on essaie de trouver un admin
+                if (a!=null){
                     request.getSession(true).setAttribute("admin", cl);
                     response.sendRedirect("espaceadministrateur");
                 } else{
