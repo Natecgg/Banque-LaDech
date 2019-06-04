@@ -78,6 +78,28 @@ public class AdministrateurDao {
   
     }
     
+    public static void deconnexion(Admin a) throws SQLException{
+        
+        String sql = "UPDATE admin SET derniereConnexion = CURRENT_TIMESTAMP WHERE idadmin = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, a.getId());
+        requete.executeQuery();
+        
+    }
+    
+    public static java.util.Date getDerniereConnexion(Admin a) throws SQLException{
+        String sql = "select derniereConnexion from admin WHERE idadmin = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, a.getId());
+        ResultSet rs = requete.executeQuery();
+        
+        java.sql.Date dateSql = rs.getDate("derniereConnexion");
+        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        return(dateJava);
+    }
+    
     public static List<Admin> getAllAdministrateurs() throws SQLException {
         List<Admin> admins = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
