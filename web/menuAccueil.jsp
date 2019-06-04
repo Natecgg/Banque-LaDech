@@ -27,6 +27,8 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
         <title>Banque La Dech - Accueil</title>
     </head>
     <body style="background-color: goldenrod">
+        
+ <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
             <a class="navbar-brand" href="#"><img src="Images/logo.png" style="width: 70px;">BanqueLaDech</a>
 
@@ -48,18 +50,68 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
         <a class="nav-link" href="#">Vidéos</a>
       </li>
     </ul>
-      
-      <button type="button" class="btn btn-outline-light" data-toggle="modal" data-target=".bd-example-modal-lg" style="position: absolute; left: 1750px;">Connexion</button>
-<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-      ...
-    </div>
   </div>
+              <!-- Button trigger modal -->
+<button type="button" class="btn btn-raised btn-primary" data-toggle="modal" data-target="#exampleModal" style="background-color: blue;">
+  Connexion
+</button>
+</nav>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" >
+      
+    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-image: url('login-background.jpg'); background-size:cover;">
+       
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+                    <br>
+                    <br>
+                    <div class="col d-flex justify-content-center">
+                        <div class="card text-center" style="width: 20rem; height: 25rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
+                            
+                            
+                            <div class="card-header" style="background-color: turquoise; color: white"> Connexion
+                                                   </div>
+                            <div class="card-body">
+                                <br> <br>
+                                
+                                <form action="connexion" method="POST">
+                                    <div class="form-group">
+                                        <input name="login" class="form-control" type="email" placeholder="login" required>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <input name="mdp" class="form-control" type="password" placeholder="password" required>
+                                    </div>
+                                    <br> 
+                                    <button type="submit" class="btn btn-primary"> Connexion </button>
+                                </form>
+                                <p class="text-danger">${msg}
+                                    
+                                </p>
+                                
+                            </div>
+                    </div>    
+                    </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Se connecter</button>
+      </div>
+   
+  </div>
+      </div> 
 </div>
       
       
      
-</nav>
+
     </body>
 </html>
