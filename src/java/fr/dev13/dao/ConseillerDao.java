@@ -57,7 +57,7 @@ public class ConseillerDao {
     
     
     public static void activerDesactiverCompte(int idClient, int actif) throws SQLException{
-        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        String sql = "UPDATE compte_bancaire SET compteActif = ? WHERE idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?) as a;";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
@@ -70,12 +70,25 @@ public class ConseillerDao {
     }
     
     public static void activerDesactiverCarte(int idClient, int actif) throws SQLException{
-        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE (idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?;";
+        String sql = "UPDATE compte_bancaire SET carteActive = ? WHERE idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?) as a;";
         Connection connexion = ConnectDb.getConnection();
         
         PreparedStatement requette = connexion.prepareStatement(sql);
         
         requette.setInt(1, actif);
+        requette.setInt(2, idClient);
+        
+        requette.execute();
+  
+    }
+    
+    public static void autoriserDecouvert(int idClient, double montantAutorise) throws SQLException{
+        String sql = "UPDATE compte_bancaire SET demandeDecouvert = ? WHERE idcompteBancaire = (SELECT idCompteBancaire FROM client WHERE idclient=?) as a;";
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setDouble(1, montantAutorise);
         requette.setInt(2, idClient);
         
         requette.execute();
