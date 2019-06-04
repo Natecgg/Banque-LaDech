@@ -105,7 +105,7 @@
                 </div>
                <div class="col container text-center" style="margin: 1%">
                 <br><br><br>
-                <img src="Images/100.PNG" class="" alt="...">
+                <p style="font-size: 80px; color: darkblue"><b>100€*<br>OFFERTS</b></p>
                 <h5><b>Pour toute première ouverture de compte avec carte bancaire </b></h5>
                 <br><br>
                 <p style="color: gray">* Voir conditions sur le site</p>
