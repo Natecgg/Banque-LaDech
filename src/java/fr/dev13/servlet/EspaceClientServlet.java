@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author ESIC
  */
-@WebServlet(name = "EspaceClientServlet", urlPatterns = {"/espaceclient"})
+@WebServlet(name = "EspaceClientServlet", urlPatterns = {"/espace_client"})
 public class EspaceClientServlet extends HttpServlet {
 
     /**
