@@ -38,22 +38,13 @@ public class ConseillerDao {
                 c.setNom(rs.getString("nom"));
                 c.setPrenom(rs.getString("prenom"));
                 c.setMail(rs.getString("mail"));
-                java.sql.Date dateSql = rs.getDate("derniereconnexion");
+                java.sql.Date dateSql = rs.getDate("derniereConnexion");
                 c.setDerniereConnexion(dateSql);
         }
         
         return c;
     }
-    
-    public static java.util.Date dateSql2Java(java.sql.Date dateSql){
-        java.util.Date dateJava;
-        if (dateSql==null)
-             dateJava = null;
-        else{
-            dateJava = new java.util.Date(dateSql.getTime());
-        }
-        return dateJava;
-    }
+ 
     
     
     public static void activerDesactiverCompte(int idClient, int actif) throws SQLException{
@@ -80,6 +71,28 @@ public class ConseillerDao {
         
         requette.execute();
   
+    }
+    
+    public static void deconnexion(Conseiller c) throws SQLException{
+        
+        String sql = "UPDATE conseiller SET derniereConnexion = CURRENT_TIMESTAMP WHERE idconseiller = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, c.getId());
+        requete.executeQuery();
+        
+    }
+    
+    public static java.util.Date getDerniereConnexion(Conseiller c) throws SQLException{
+        String sql = "select derniereConnexion from conseiller WHERE idconseiller = ?";
+        Connection connexion = ConnectDb.getConnection();
+        PreparedStatement requete = connexion.prepareStatement(sql);
+        requete.setInt(1, c.getId());
+        ResultSet rs = requete.executeQuery();
+        
+        java.sql.Date dateSql = rs.getDate("derniereConnexion");
+        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        return(dateJava);
     }
     
     public static void autoriserDecouvert(int idClient, double montantAutorise) throws SQLException{

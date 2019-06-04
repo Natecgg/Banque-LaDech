@@ -44,14 +44,14 @@
         
           <div class="container">
             
-            <h1>Dépot </h1>
+            <h1>Dépot :</h1>
           
             <br>
           
       <div class="form-group">   
           <h5>  Entrez le montant à déposer </h5>
             
-<!--            <input name="NCompte" class="form-control" type="text" placeholder="numero compte" required>-->
+
             <input name="Montant" class="form-control" type="number" placeholder="montant" required>
              </div>
              <br> 
@@ -60,7 +60,7 @@
             
         </div>   
             
-        </div>   
+        
         <br><br>
         
         
