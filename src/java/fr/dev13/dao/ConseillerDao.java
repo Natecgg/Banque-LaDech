@@ -81,7 +81,7 @@ public class ConseillerDao {
   
     }
     
-    public static void insert(Conseiller c) throws SQLException{
+    public static void creerConseiller(Conseiller c) throws SQLException{
         String sql = "insert into conseiller (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
         

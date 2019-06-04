@@ -39,15 +39,15 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
     <ul class="navbar-nav">
         
       <li class="nav-item">
-        <a class="nav-link" href="actualites.jsp">Actualités<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="actualites.jsp" id="menuActualite">Actualités<span class="sr-only">(current)</span></a>
       </li>
 
 
       <li class="nav-item">
-        <a class="nav-link" href="bourse.jsp">Bourse</a>
+        <a class="nav-link" href="bourse.jsp" id="menuBourse">Bourse</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="videos.jsp">Vidéos</a>
+        <a class="nav-link" href="videos.jsp" id="menuVideos">Vidéos</a>
       </li>
     </ul>
   </div>
@@ -91,7 +91,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                     </div>
                                     <br> 
                                  </form>
-                                    <a href="""class="text-info">Mot de passe oublié?</a>
+                                    <a href="" class="text-info">Mot de passe oublié?</a>
                                 <p class="text-danger">${msg}
                                     
                                 </p>
