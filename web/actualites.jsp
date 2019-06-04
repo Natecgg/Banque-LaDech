@@ -12,19 +12,50 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Page d'actualités</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-actualites.jpg'); background-size: cover;">
+        
+            <style>
+        #menuActualites{
+           color:white;
+           font-weight: bold;
+           text-decoration: underline;
+        }
+        
+    </style>
         <br><br><br>    
       
             <div class="row">
-                <div class="col container text-center" style="padding: 3%">
-                    <h5>Crédit immobilier : Vous rêvez d’acheter un appartement ou une maison, vous avez besoin d’un financement ?</h5>
-                    <br>
-                    <img src="Images/Logement.jpg" class="d-block w-100" alt="...">
-                    <br>
-                    <p>Avec Banque LaDech, vous pouvez effectuer votre demande de crédit immobilier 
-                        100% en ligne et bénéficier des taux fixes parmi les plus bas du marché.</p>
-                    <br>
-                    <p style="color: steelblue"><b>Je simule mon crédit immobilier</b></p>
+                <div class="col container" style="padding: 2%">
+                    <h5 class="text-center"><b>DANS LE RESTE DE L'ACTU</b></h5>
+                    <br><br>
+                    <table class="table">
+                       <tbody>
+                            <tr>
+                                <th scope="row">13:11</th>
+                                <td><p>2018, année record pour la production biologique en France - REUTERS</p></td>
+                            </tr>
+                            <tr>
+                                <th scope="row">13:10</th>
+                                <td>A Paris, 70% des immeubles insalubres sont concentrés dans seulement 4 arrondissements - LADECH AVEC NEWSGENE</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">12:48</th>
+                            <td>Lyon : les Toques Blanches au Club Med - LE PARISIEN</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">12:46</th>
+                            <td>Impôts : pourquoi attend-on souvent le dernier moment pour déclarer ses revenus ? - LE PARISIEN</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">12:44</th>
+                            <td>Près de 10% des agriculteurs français travaillent désormais en bio - LE PARISIEN</td>
+                            </tr>
+                            <tr>
+                            <th scope="row">12:33</th>
+                            <td>Le crédit immobilier n'a jamais été aussi favorable en France - AFP</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col-6 bd-example container">
                     <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">

@@ -5,13 +5,21 @@
  */
 package fr.dev13.servlet;
 
+import fr.dev13.dao.ConseillerDao;
+import fr.dev13.model.CollectionClient;
+import fr.dev13.model.Conseiller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -58,7 +66,22 @@ public class EspaceConseillerServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        HttpSession session = request.getSession(true);
+        
+        Conseiller c = (Conseiller) session.getAttribute("conseiller");
+        request.setAttribute("client",c);
+        
+        List<CollectionClient> liste=null;
+        try {
+            liste = ConseillerDao.getClientsOfConseiller(c);
+        } catch (SQLException e) {
+            PrintWriter out = response.getWriter();
+            out.println(e.getMessage());
+        }
+        
+        request.setAttribute("liste", liste);
+        request.getRequestDispatcher("/WEB-INF/espaceConseiller.jsp").forward(request, response);
     }
 
     /**

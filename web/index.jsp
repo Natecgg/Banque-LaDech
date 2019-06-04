@@ -14,7 +14,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     
-    <body>
+    <body style="background-image: url('Images/background-accueil.jpg'); background-size: cover;">
         <div class="row">
             <div class="col container text-center" style="padding: 3%">
                 <br><br>
