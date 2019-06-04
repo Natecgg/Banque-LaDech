@@ -26,11 +26,11 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
         <title>Banque La Dech - Accueil</title>
     </head>
-    <body style="background-color: goldenrod; opacity:0.6;">
+    <body style="background-color: goldenrod;">
         
  <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href="#"><img src="Images/logo.png" style="width: 70px;">BanqueLaDech</a>
+            <a class="navbar-brand" href="index.html"><img src="Images/logo.png" style="width: 70px;">BanqueLaDech</a>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document" >
       
-    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-image: url('login-background.jpg'); background-size:cover;">
+    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover;">
        
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
