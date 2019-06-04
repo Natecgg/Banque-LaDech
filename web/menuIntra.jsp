@@ -22,18 +22,6 @@
      
     </head>
     <body>
-        <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Opérations</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Historique</a>
-  </li>
-   <li class="nav-item">
-    <a class="nav-link" href="deco">Deconnexion</a>
-  </li>
-</ul>
-        
         
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
