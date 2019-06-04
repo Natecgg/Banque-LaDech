@@ -26,7 +26,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 
         <title>Banque La Dech - Accueil</title>
     </head>
-    <body style="background-color: goldenrod;">
+    <body>
         
  <!--Navbar-->       
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -39,7 +39,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
     <ul class="navbar-nav">
         
       <li class="nav-item active">
-        <a class="nav-link" href="#">Actualités<span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="actualites">Actualités<span class="sr-only">(current)</span></a>
       </li>
 
 
@@ -58,10 +58,10 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:50px;">
   <div class="modal-dialog" role="document" >
       
-    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover;">
+    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
        
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
@@ -69,17 +69,16 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body" style="background-image: url('Images/background-login.jpg');background-size:cover;">
 
                     <br>
                     <br>
-                    <div class="col d-flex justify-content-center">
-                        <div class="card text-center" style="width: 20rem; height: 25rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
+                    <div class="col d-flex justify-content-center" style="margin-top:-8%;">
+                        
+                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(0,0,0,0.30);">
+                                                       
                             
-                            
-                            <div class="card-header" style="background-color: turquoise; color: white"> Connexion
-                                                   </div>
-                            <div class="card-body">
+                            <div class="card-body" style="position:relative; top:-10%;">
                                 <br> <br>
                                 
                                 <form action="connexion" method="POST">
@@ -91,8 +90,8 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                         <input name="mdp" class="form-control" type="password" placeholder="password" required>
                                     </div>
                                     <br> 
-                                    <button type="submit" class="btn btn-primary"> Connexion </button>
-                                </form>
+                                 </form>
+                                    <a href="""class="text-info">Mot de passe oublié?</a>
                                 <p class="text-danger">${msg}
                                     
                                 </p>
@@ -101,10 +100,11 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     </div>    
                     </div>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-primary">Se connecter</button>
-      </div>
+     
+       <div style="text-align: center; padding-top: 1%;">
+        <button type="button" class="btn btn-primary btn-outline" >Se connecter</button>
+       </div>
+      
    
   </div>
       </div> 

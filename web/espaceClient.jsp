@@ -19,11 +19,17 @@
         <h3> Espace  </h3> 
         <h5> Déconexion </h5>
        </div>
-       
-        <br><br><br><br>
-        
-        <h3> Votre solde actuel est :</h3> <br>
-        
+        <div class="container">
+            <center>
+            <img src="Images/rain.gif" alt=""/>
+            </center>
+         </div>
+        <br><br>
+        <div class="container">
+            <center>
+        <h3> Votre solde actuel est : </h3> <br>
+        </center>
+         </div>
         
  </body>
 </html>
