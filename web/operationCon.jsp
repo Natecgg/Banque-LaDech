@@ -3,7 +3,7 @@
     Created on : 4 juin 2019, 13:53:32
     Author     : ESIC
 --%>
-
+<%@include file="menuIntraCon.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
