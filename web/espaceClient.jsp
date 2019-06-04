@@ -3,6 +3,7 @@
     Created on : 3 juin 2019, 16:22:13
     Author     : ESIC
 --%>
+<%@page import="fr.dev13.model.Client"%>
 <%@include file="menuIntra.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,13 +12,16 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
+        
           <div class="container"> 
               
-<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
+              <% Client cl = (Client) request.getAttribute("client"); %> 
+              ${client}
+<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.Solde} $ {moi.prenom}  {moi.nom} -->
             
-        <h3> Espace  </h3> 
-        <h5> Déconexion </h5>
+        <h3> Espace client de Mr ou Mme :  </h3> 
+      
        </div>
         <div class="container">
             <center>

@@ -22,18 +22,6 @@
      
     </head>
     <body>
-        <ul class="nav">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Opérations</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Historique</a>
-  </li>
-   <li class="nav-item">
-    <a class="nav-link" href="deco">Deconnexion</a>
-  </li>
-</ul>
-        
         
         
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -46,7 +34,7 @@
     <ul class="navbar-nav mr-auto">
         
       <li class="nav-item active">
-        <a class="nav-link" href="#">Opérations <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="Opération.jsp">Opérations <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">
@@ -54,7 +42,7 @@
       </li>
      
       <li class="nav-item active">
-        <a class="nav-link disabled" href="#">Déconexion</a>
+        <a class="nav-link disabled" href="#"></a>
       </li>
     </ul>
       
