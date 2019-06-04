@@ -19,6 +19,8 @@ import java.util.List;
  * @author ESIC
  */
 public class ConseillerDao {
+    
+ /*Récupère les données lors de la connexion d'un conseiller*/
     public static Conseiller getByLoginPass(String login, String mdp) throws SQLException {
         Conseiller c = null;
         String sql = "select * from conseiller where mail=? AND mdp=?";
@@ -40,6 +42,7 @@ public class ConseillerDao {
         return c;
     }
     
+ /*Ajoute un nouveau conseiller à la BD*/   
     public static void insert(Conseiller c) throws SQLException{
         String sql = "insert into conseiller (nom, prenom, mail, mdp) VALUES (?,?,?,?)";
         Connection connexion = ConnectDb.getConnection();
@@ -54,7 +57,8 @@ public class ConseillerDao {
         requette.execute();
   
     }
-    
+  
+/*Récupère la liste de tous les conseillers*/
     public static List<Conseiller> getAllConseillers() throws SQLException {
         List<Conseiller> conseillers = new ArrayList<>();
         Connection connexion = ConnectDb.getConnection();
