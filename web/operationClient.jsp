@@ -20,15 +20,25 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Opération client</title>
     </head>
-    <body>
+    <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
     <center>
         <h1>Toutes vos oprérations et bien plus encore!</h1>
           </center> 
      <br>
     <div class="container">
             
-            <h1>Virement </h1>
+            <h1>Virement : </h1>
+            <br>
           
+      <div class="form-group">   
+          <h5>  Entrez le compte à crediter </h5>
+            
+            <input name="NCompte" class="form-control" type="text" placeholder="numero compte" required>
+            <input name="Montant" class="form-control" type="number" placeholder="montant" required>
+             </div>
+             <br> 
+             <button type="submit" class="btn btn-primary">Effectuer virement</button>
+               
             
         </div>   
         
@@ -36,6 +46,19 @@
             
             <h1>Dépot </h1>
           
+            <br>
+          
+      <div class="form-group">   
+          <h5>  Entrez le montant à déposer </h5>
+            
+<!--            <input name="NCompte" class="form-control" type="text" placeholder="numero compte" required>-->
+            <input name="Montant" class="form-control" type="number" placeholder="montant" required>
+             </div>
+             <br> 
+             <button type="submit" class="btn btn-primary">Effectuer Dépot</button>
+               
+            
+        </div>   
             
         </div>   
         <br><br>
