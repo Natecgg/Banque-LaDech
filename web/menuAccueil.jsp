@@ -65,24 +65,24 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:-100px;">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:absolute; margin-top:-2%;">
   <div class="modal-dialog" role="document" >
       
     <div class="modal-content" style=" border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
        
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
+        <h5 class="modal-title" id="exampleModalLabel" style="text-align:center;" >Accèder à votre compte</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="background-image: url('Images/background-login.jpg');background-size:cover;">
+      <div class="modal-body" style="background-color: rgb(0,159,134);background-size:cover;">
 
                     <br>
                     <br>
                     <div class="col d-flex justify-content-center">
                         
-                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
+                        <div class="card text-center" style="width: 22rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
                                                        
                             
                             <div class="card-body" style="position:relative; top:-10%;">
