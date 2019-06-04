@@ -78,9 +78,14 @@
                         </a>
                     </div>
                 </div>
-                <div class="col">
-                    3 of 3
-                </div>
+               <div class="col container text-center" style="margin: 1%">
+                <br><br><br>
+                <img src="Images/100.PNG" class="" alt="...">
+                <h5><b>Pour toute première ouverture de compte avec carte bancaire </b></h5>
+                <br><br>
+                <p style="color: gray">* Voir conditions sur le site</p>
+                <button type="button" class="btn btn-info btn-primary btn-lg">J'en profite</button>
+            </div>
             </div>
     
         
