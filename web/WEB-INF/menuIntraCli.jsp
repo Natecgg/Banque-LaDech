@@ -49,7 +49,7 @@
     <form class="form-inline my-2 my-lg-0">
         
          <li class="nav-item active">
-        <a class="nav-link disabled" href="index.jsp">Déconexion</a>
+        <a class="nav-link" href="index.jsp">Déconexion</a>
       </li>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
