@@ -4,6 +4,7 @@
     Author     : ESIC
 --%>
 <%@include file="menuIntraAdm.jsp" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -44,12 +45,12 @@
             </thead>
             <tbody>
          
-                <c:forEach items="$ ${liste}" var="conseiller"> 
+                <c:forEach items="${liste}" var="conseiller"> 
                     <tr>    
                         <td>${conseiller.nom}</td>
                         <td>${conseiller.prenom}</td>
-                        <td>${clients.mail}</td>               
-                
+                        <td>${conseiller.mail}</td>               
+                </c:forEach>
             </tbody>
             
         </table>

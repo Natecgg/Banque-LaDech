@@ -70,17 +70,16 @@ public class EspaceAdminServlet extends HttpServlet {
         Admin a = (Admin) session.getAttribute("admin");
         request.setAttribute("admin",a);
         
-//        List<Conseiller> liste=null;
-//        try {
-//            liste = ConseillerDao.getAllConseillers();
-//        } catch (SQLException e) {
-//            PrintWriter out = response.getWriter();
-//            out.println(e.getMessage());
-//        }
-        
-//        request.setAttribute("liste", liste);
-        request.getRequestDispatcher("/WEB-INF/espaceAdmin.jsp").forward(request, response);
-        
+        List<Conseiller> liste=null;
+        try {
+            liste = ConseillerDao.getAllConseillers();
+            request.setAttribute("liste", liste);
+            request.getRequestDispatcher("/WEB-INF/espaceAdmin.jsp").forward(request, response);
+            
+        } catch (SQLException e) {
+            PrintWriter out = response.getWriter();
+            out.println(e.getMessage());
+        }       
         
     }
 
