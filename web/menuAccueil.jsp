@@ -87,7 +87,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                             <div class="card-body" style="position:relative; top:-15%;">
                                 <br> <br> <br>
                                 
-                                <form action="accueil" method="POST">
+                                <form action="connexion" method="POST">
                                     <div class="form-group">
                                         <input name="login" value ="${param['login']}" class="form-control" type="email" placeholder="login" required>
                                     </div>

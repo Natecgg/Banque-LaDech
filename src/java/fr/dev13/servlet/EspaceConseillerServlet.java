@@ -70,7 +70,7 @@ public class EspaceConseillerServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         Conseiller c = (Conseiller) session.getAttribute("conseiller");
-        request.setAttribute("client",c);
+        request.setAttribute("conseiller",c);
         
         List<CollectionClient> liste=null;
         try {
