@@ -271,4 +271,21 @@ public class ClientDao {
         return clients;
     }
 
+    public static double solde(Client cl) throws SQLException {
+        String sql = "SELECT solde FROM compte_bancaire WHERE idcompteBancaire = ?";
+
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, cl.getIdCompteBancaire());      
+        requette.execute();
+        
+        ResultSet rs = requette.executeQuery();
+        double  solde = rs.getDouble("solde");
+        
+        return solde;
+        
+    }
+
 }

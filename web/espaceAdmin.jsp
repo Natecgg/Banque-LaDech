@@ -43,16 +43,12 @@
             </tr>
             </thead>
             <tbody>
-<!--                <c:forEach items="$ {allMembers}" var="membres"> 
+         
+                <c:forEach items="$ ${liste}" var="conseiller"> 
                     <tr>    
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                    
-                    </tr>
-                </c:forEach>-->
-                
-                
+                        <td>${conseiller.nom}</td>
+                        <td>${conseiller.prenom}</td>
+                        <td>${clients.mail}</td>               
                 
             </tbody>
             

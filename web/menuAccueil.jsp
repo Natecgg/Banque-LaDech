@@ -81,7 +81,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     <br>
                     <div class="col d-flex justify-content-center">
                         
-                        <div class="card" style="width: 25rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
+                        <div class="card" style="width: 25rem; height: 20rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
                             <h3 style="margin:auto;">Accéder à votre espace</h3>                                   
                             
                             <div class="card-body" style="position:relative; top:-15%;">
@@ -110,9 +110,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     </div>
       </div>
      
-       <div style="text-align: center; margin-bottom: 10%;">
-        <button type="submit" class="btn btn-primary btn-outline" >Se connecter</button>
-       </div>
+    
       
    
   </div>
