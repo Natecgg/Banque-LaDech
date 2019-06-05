@@ -16,9 +16,7 @@
         
           <div class="container"> 
               
-              <% Client cl = (Client) request.getAttribute("client"); %> 
-              
-            
+                  
         <h3> Espace client de ${client.nom} ${client.prenom} :  </h3> 
         <br> <br>
        </div>
