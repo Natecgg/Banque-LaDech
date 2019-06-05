@@ -19,7 +19,7 @@
         
         
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Opération client</title>
+        <title>Opération, espace ${client.nom} ${client.prenom}</title>
     </head>
     <body style="background-image: url('Images/background-bourse.jpg'); background-size: cover;">
     <center>
