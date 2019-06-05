@@ -70,18 +70,18 @@ public class OperationClientServlet extends HttpServlet {
         Client cl = (Client) session.getAttribute("client");
         request.setAttribute("client",cl);
         
-//        List<Operation> liste=null;
-//        try {
-//            liste = ClientDao.getHistorique(cl);
-//            
-//        } catch (SQLException e) {
-//            PrintWriter out = response.getWriter();
-//            out.println(e.getMessage());
-//        }       
-//        
-//        request.setAttribute("liste", liste);
+        List<Operation> liste=null;
+        try {
+            liste = ClientDao.getHistorique(cl);
+            
+        } catch (SQLException e) {
+            PrintWriter out = response.getWriter();
+            out.println(e.getMessage());
+        }       
+        
+        request.setAttribute("liste", liste);
         request.getRequestDispatcher("/WEB-INF/operationClient.jsp").forward(request, response);
-//        
+        
   }
 
     /**

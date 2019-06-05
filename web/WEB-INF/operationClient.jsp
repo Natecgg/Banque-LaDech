@@ -67,7 +67,7 @@
         
         <br><br>
         
-<!--           <div class="container"> <h3>Tableau clients</h3>
+          <div class="container"> <h3>Tableau clients</h3>
         <table class="table">
             <thead class="thead-dark"> 
                 <tr>
@@ -78,12 +78,12 @@
             </tr>
             </thead>
             <tbody>
-               <c:forEach items="$ $ {liste}" var="op"> 
+               <c:forEach items="${liste}" var="op"> 
                     <tr>    
-                        <td>$ {op.libelle}</td>
-                        <td>$ {op.montantOperation}</td>
-                        <td>$ {op.idBeneficiaire}</td>
-                        <td>$ {op.dateOperation}</td>
+                        <td>${op.libelle}</td>
+                        <td>${op.montantOperation}</td>
+                        <td>${op.idBeneficiaire}</td>
+                        <td>${op.dateOperation}</td>
                     
                     </tr>
                 </c:forEach>
@@ -93,7 +93,7 @@
             </tbody>
             
         </table>
-      </div>-->
+      </div>
         
         
     </body>
