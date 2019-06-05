@@ -90,8 +90,13 @@ public class ConseillerDao {
         requete.setInt(1, c.getId());
         ResultSet rs = requete.executeQuery();
         
-        java.sql.Date dateSql = rs.getDate("derniereConnexion");
-        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        java.util.Date dateJava = null;
+        
+        if (rs.next()){
+            java.sql.Date dateSql = rs.getDate("derniereConnexion");
+            dateJava = DateManagement.dateSql2Java(dateSql);
+        }
+            
         return(dateJava);
     }
     

@@ -70,6 +70,7 @@ public class ClientDao {
         Statement requete2 = connexion.createStatement();
         ResultSet rs = requete2.executeQuery(sql);
         
+        rs.next();
         int idcompteBancaire= rs.getInt("idcompteBancaire");
         sql = "UPDATE client SET idcompteBancaire = ? WHERE mail = ?;";
         requette = connexion.prepareStatement(sql);
@@ -98,9 +99,12 @@ public class ClientDao {
         PreparedStatement requete = connexion.prepareStatement(sql);
         requete.setInt(1, cl.getId());
         ResultSet rs = requete.executeQuery();
+        java.util.Date dateJava = null;
         
+        if (rs.next()){
         java.sql.Date dateSql = rs.getDate("derniereConnexion");
-        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        dateJava = DateManagement.dateSql2Java(dateSql);
+        }
         return(dateJava);
     }
     
@@ -125,6 +129,7 @@ public class ClientDao {
         
         ResultSet rs = requette.executeQuery();
         
+        rs.next();
         soldeDebiteur = rs.getDouble("solde");
         decouvertDebiteur = rs.getDouble("demandeDecouvert");
         actifDebiteur = rs.getInt("compteActif");
@@ -182,7 +187,7 @@ public class ClientDao {
         int actifDebiteur=0;
         
         ResultSet rs = requette.executeQuery();
-        
+        rs.next();
         soldeDebiteur = rs.getDouble("solde");
         decouvertDebiteur = rs.getDouble("demandeDecouvert");
         actifDebiteur = rs.getInt("compteActif");
