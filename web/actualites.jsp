@@ -25,7 +25,7 @@
         <br><br><br>    
       
             <div class="row">
-                <div class="col container" style="padding: 2%">
+                <div class="col container" style="padding: 2%; background-color:rgba(255,255,255,0.7);">
                     <h5 class="text-center"><b>DANS LE RESTE DE L'ACTU</b></h5>
                     <br><br>
                     <table class="table">

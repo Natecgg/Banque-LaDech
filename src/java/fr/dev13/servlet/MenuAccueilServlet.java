@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ESIC
  */
-@WebServlet(name = "MenuAccueilServlet", urlPatterns = {"/accueil"})
+@WebServlet(name = "MenuAccueilServlet", urlPatterns = {"/connexion"})
 public class MenuAccueilServlet extends HttpServlet {
 
     /**
@@ -64,7 +64,7 @@ public class MenuAccueilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/menuAccueil.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     /**
@@ -121,7 +121,9 @@ public class MenuAccueilServlet extends HttpServlet {
                     response.sendRedirect("espace_administrateur");
                 } else{
                     request.setAttribute("msg", "Identifiant ou mot de passe incorrect");
-                    request.getRequestDispatcher("/menuAccueil.jsp").forward(request, response);
+                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                    String test =  request.getContextPath();
+                    System.out.println("test juste bvouveu " + test);
                 }
             }  
             
