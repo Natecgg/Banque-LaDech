@@ -97,6 +97,9 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                         <input name="mdp" class="form-control" type="password" placeholder="password" required>
                                     </div>
                                     <br> 
+                                    <div style="text-align: center; padding-top: 1%;">
+                                        <button type="submit" class="btn btn-primary btn-outline" >Se connecter</button>
+                                    </div>
                                  </form>
                                     <a href="" class="text-info">Mot de passe oublié?</a>
                                 <p class="text-danger">${msg}
@@ -108,9 +111,7 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                     </div>
       </div>
      
-       <div style="text-align: center; padding-top: 1%;">
-        <button type="button" class="btn btn-primary btn-outline" >Se connecter</button>
-       </div>
+       
       
    
   </div>
