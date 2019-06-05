@@ -34,7 +34,7 @@
     <ul class="navbar-nav mr-auto">
         
       <li class="nav-item active">
-        <a class="nav-link" href="Opération.jsp">Opérations <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="operationClient.jsp">Opérations <span class="sr-only">(current)</span></a>
       </li>
       
       <li class="nav-item active">

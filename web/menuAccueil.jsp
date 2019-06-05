@@ -65,34 +65,33 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
 </nav>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:relative; top:-100px;">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="position:absolute; margin-top:-2%;">
   <div class="modal-dialog" role="document" >
       
-    <div class="modal-content" style="border-radius: 40px; border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
+    <div class="modal-content" style=" border: 2px solid window; margin-top:20%; background-size:cover; box-shadow: 0 19px 38px  rgba(0,0,0,0.30)">
        
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel" >Accèder à votre compte</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="background-image: url('Images/background-login.jpg');background-size:cover;">
+      <div class="modal-body">
 
                     <br>
                     <br>
                     <div class="col d-flex justify-content-center">
                         
-                        <div class="card text-center" style="width: 20rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
-                                                       
+                        <div class="card" style="width: 25rem; height: 15rem; box-shadow: 0 19px 38px  rgba(150,150,100,0.30); margin-top: -10%;">
+                            <h3 style="margin:auto;">Accéder à votre espace</h3>                                   
                             
-                            <div class="card-body" style="position:relative; top:-10%;">
-                                <br> <br>
+                            <div class="card-body" style="position:relative; top:-15%;">
+                                <br> <br> <br>
                                 
-                                <form action="connexion" method="POST">
+                                <form action="accueil" method="POST">
                                     <div class="form-group">
                                         <input name="login" value ="${param['login']}" class="form-control" type="email" placeholder="login" required>
                                     </div>
-                                    
+                                    <br>
                                     <div class="form-group">
                                         <input name="mdp" class="form-control" type="password" placeholder="password" required>
                                     </div>
@@ -102,16 +101,18 @@ integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFB
                                     </div>
                                  </form>
                                     <a href="" class="text-info">Mot de passe oublié?</a>
-                                <p class="text-danger">${msg}
-                                    
-                                </p>
+                                <p class="text-danger">${msg} </p>
+                            </div>
+                                
                                 
                             </div>
                     </div>    
                     </div>
       </div>
      
-       
+       <div style="text-align: center; margin-bottom: 10%;">
+        <button type="submit" class="btn btn-primary btn-outline" >Se connecter</button>
+       </div>
       
    
   </div>

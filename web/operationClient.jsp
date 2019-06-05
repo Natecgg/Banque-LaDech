@@ -6,6 +6,7 @@
 <%@include file="menuIntraCli.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
     <head>
         
@@ -32,10 +33,12 @@
           
       <div class="form-group">   
           <h5>  Entrez le compte à crediter </h5>
+            <form action="Virment" method="POST">  
             
             <input name="NCompte" class="form-control" type="text" placeholder="numero compte" required>
             <input name="Montant" class="form-control" type="number" placeholder="montant" required>
              </div>
+</form>
              <br> 
              <button type="submit" class="btn btn-primary">Effectuer virement</button>
                
@@ -51,12 +54,12 @@
       <div class="form-group">   
           <h5>  Entrez le montant à déposer </h5>
             
-
+          <form action="dépot" method="POST">
             <input name="Montant" class="form-control" type="number" placeholder="montant" required>
-             </div>
+             </div> </form> 
              <br> 
              <button type="submit" class="btn btn-primary">Effectuer Dépot</button>
-               
+              
             
         </div>   
             
