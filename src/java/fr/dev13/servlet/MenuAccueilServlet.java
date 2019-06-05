@@ -23,7 +23,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ESIC
  */
-@WebServlet(name = "MenuAccueilServlet", urlPatterns = {"/accueil"})
+@WebServlet(name = "MenuAccueilServlet", urlPatterns = {"/connexion"})
 public class MenuAccueilServlet extends HttpServlet {
 
     /**
@@ -64,7 +64,7 @@ public class MenuAccueilServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/menuAccueil.jsp").forward(request, response);
+        request.getRequestDispatcher("/index.jsp").forward(request, response);
     }
 
     /**
@@ -105,7 +105,7 @@ public class MenuAccueilServlet extends HttpServlet {
             }
             
             if (c!=null){ // si on n'a pas trouvé de conseiller on essaie de trouver un admin
-                request.getSession(true).setAttribute("conseiller", cl);
+                request.getSession(true).setAttribute("conseiller", c);
                 response.sendRedirect("espace_conseiller");
             } else {
                 Admin a = null;
@@ -117,11 +117,13 @@ public class MenuAccueilServlet extends HttpServlet {
                 }
                 
                 if (a!=null){
-                    request.getSession(true).setAttribute("admin", cl);
+                    request.getSession(true).setAttribute("admin", a);
                     response.sendRedirect("espace_administrateur");
                 } else{
                     request.setAttribute("msg", "Identifiant ou mot de passe incorrect");
-                    request.getRequestDispatcher("/menuAccueil.jsp").forward(request, response);
+                    request.getRequestDispatcher("/index.jsp").forward(request, response);
+                    String test =  request.getContextPath();
+                    System.out.println("test juste bvouveu " + test);
                 }
             }  
             

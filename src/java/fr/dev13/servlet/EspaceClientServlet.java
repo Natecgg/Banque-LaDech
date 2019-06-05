@@ -5,6 +5,7 @@
  */
 package fr.dev13.servlet;
 
+import fr.dev13.dao.ClientDao;
 import fr.dev13.model.Client;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -63,7 +64,17 @@ public class EspaceClientServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         Client cl = (Client) session.getAttribute("client");
+        double solde = 0;
+        
+        try {
+           solde = ClientDao.solde(cl);
+        } catch (Exception e) {
+            PrintWriter out = response.getWriter();
+            out.println(e.getMessage());
+        }
+        
         request.setAttribute("client",cl);
+        request.setAttribute("solde", solde);
         request.getRequestDispatcher("/WEB-INF/espaceClient.jsp").forward(request, response);
     }
 

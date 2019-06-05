@@ -271,4 +271,41 @@ public class ClientDao {
         return clients;
     }
 
+    public static double solde(Client cl) throws SQLException {
+        String sql = "SELECT solde FROM compte_bancaire WHERE idcompteBancaire = ?";
+
+        Connection connexion = ConnectDb.getConnection();
+        
+        PreparedStatement requette = connexion.prepareStatement(sql);
+        
+        requette.setInt(1, cl.getIdCompteBancaire());      
+        
+        cl.getIdCompteBancaire();
+        
+        ResultSet rs = requette.executeQuery();
+        double solde = rs.getDouble("solde");
+        
+        return solde;
+        
+    }
+
 }
+
+//User u = null;
+//        String sql = "select * from personne where login=? AND password=?";
+//        Connection connexion = ConnectDb.getConnection();
+//        PreparedStatement requette = connexion.prepareStatement(sql);
+//        requette.setString(1, login);
+//        requette.setString(2, mdp);
+//        
+//        ResultSet rs = requette.executeQuery();
+//        
+//        if(rs.next()){
+//                u = new User();
+//                u.setId(rs.getInt("idpersonne"));
+//                u.setNom(rs.getString("nom"));
+//                u.setPrenom(rs.getString("prenom"));
+//                u.setMail(rs.getString("mail"));
+//        }
+//        
+//        return u;

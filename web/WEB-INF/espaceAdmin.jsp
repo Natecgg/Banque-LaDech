@@ -23,10 +23,10 @@
              
              
           <div class="container"> 
-              >
-<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
+              
+
         <center>  
-        <h3> Espace Administrateur </h3> 
+        <h3> Espace Administrateur ${admin.mail}  </h3> 
         <br>
         <br>
        </center> 
@@ -43,16 +43,12 @@
             </tr>
             </thead>
             <tbody>
-<!--                <c:forEach items="$ {allMembers}" var="membres"> 
+         
+                <c:forEach items="$ ${liste}" var="conseiller"> 
                     <tr>    
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                        <td>$ {}</td>
-                    
-                    </tr>
-                </c:forEach>-->
-                
-                
+                        <td>${conseiller.nom}</td>
+                        <td>${conseiller.prenom}</td>
+                        <td>${clients.mail}</td>               
                 
             </tbody>
             

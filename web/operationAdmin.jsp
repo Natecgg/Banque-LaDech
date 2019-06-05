@@ -3,7 +3,7 @@
     Created on : 4 juin 2019, 13:53:09
     Author     : ESIC
 --%>
-
+<%@include file="menuIntraAdmin.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
