@@ -65,9 +65,8 @@ public class EspaceClientServlet extends HttpServlet {
         
         Client cl = (Client) session.getAttribute("client");
         double solde = 0;
-        
         try {
-           solde = ClientDao.solde(cl);
+            solde = ClientDao.solde(cl);
         } catch (Exception e) {
             PrintWriter out = response.getWriter();
             out.println(e.getMessage());
