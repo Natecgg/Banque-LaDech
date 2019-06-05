@@ -14,15 +14,16 @@ import javax.swing.JOptionPane;
  */
 public class Test {
 
-String login="marie@gmail.com";
-String mdp="marie";
-    
-Client c = ClientDao.getByLoginPass(login,mdp);
-   
-if (c!=null){
-            System.out.println(c.infoClient());
-    
-} else {
-    System.out.println("La BD ne marche pas");
+//String login="marie@gmail.com";
+//String mdp="marie";
+//    
+//Client c = ClientDao.getByLoginPass(login,mdp);
+//   
+//if (c!=null){
+//            System.out.println(c.infoClient());
+//    
+//} else {
+//    System.out.println("La BD ne marche pas");
 }
-}
+
+
