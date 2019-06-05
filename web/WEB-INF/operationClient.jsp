@@ -5,6 +5,7 @@
 --%>
 <%@include file="menuIntraCli.jsp" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -65,6 +66,34 @@
             
         
         <br><br>
+        
+<!--           <div class="container"> <h3>Tableau clients</h3>
+        <table class="table">
+            <thead class="thead-dark"> 
+                <tr>
+            <th> Libellé </th>
+            <th> Montant</th>
+            <th> Id Bénéficiaire</th>
+            <th> n° compte</th>
+            </tr>
+            </thead>
+            <tbody>
+               <c:forEach items="$ $ {liste}" var="op"> 
+                    <tr>    
+                        <td>$ {op.libelle}</td>
+                        <td>$ {op.montantOperation}</td>
+                        <td>$ {op.idBeneficiaire}</td>
+                        <td>$ {op.dateOperation}</td>
+                    
+                    </tr>
+                </c:forEach>
+                
+                
+                
+            </tbody>
+            
+        </table>
+      </div>-->
         
         
     </body>

@@ -5,13 +5,9 @@
  */
 package fr.dev13.servlet;
 
-import fr.dev13.dao.ClientDao;
-import fr.dev13.model.Client;
-import fr.dev13.model.Operation;
+import fr.dev13.model.Conseiller;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,8 +19,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author ESIC
  */
-@WebServlet(name = "OperationClientServlet", urlPatterns = {"/operation_client"})
-public class OperationClientServlet extends HttpServlet {
+@WebServlet(name = "OperationConseillerServlet", urlPatterns = {"/OperationConseillerServlet"})
+public class OperationConseillerServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -43,10 +39,10 @@ public class OperationClientServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet OperationClientServlet</title>");            
+            out.println("<title>Servlet OperationConseillerServlet</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet OperationClientServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet OperationConseillerServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -67,22 +63,10 @@ public class OperationClientServlet extends HttpServlet {
         
         HttpSession session = request.getSession(true);
         
-        Client cl = (Client) session.getAttribute("client");
-        request.setAttribute("client",cl);
-        
-//        List<Operation> liste=null;
-//        try {
-//            liste = ClientDao.getHistorique(cl);
-//            
-//        } catch (SQLException e) {
-//            PrintWriter out = response.getWriter();
-//            out.println(e.getMessage());
-//        }       
-//        
-//        request.setAttribute("liste", liste);
-        request.getRequestDispatcher("/WEB-INF/operationClient.jsp").forward(request, response);
-//        
-  }
+        Conseiller c = (Conseiller) session.getAttribute("conseiller");
+        request.setAttribute("conseiller",c);
+        request.getRequestDispatcher("/WEB-INF/operationConseiller.jsp").forward(request, response);
+    }
 
     /**
      * Handles the HTTP <code>POST</code> method.
