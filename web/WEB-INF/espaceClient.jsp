@@ -17,10 +17,9 @@
           <div class="container"> 
               
               <% Client cl = (Client) request.getAttribute("client"); %> 
-              ${client}
-<!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.Solde} $ {moi.prenom}  {moi.nom} -->
+              
             
-        <h3> Espace client de Mr ou Mme :  </h3> 
+        <h3> Espace client de ${client.nom} ${client.prenom} :  </h3> 
         <br> <br>
        </div>
         <div class="container">
@@ -31,7 +30,7 @@
         <br><br>
         <div class="container">
             <center>
-        <h3> Votre solde actuel est : </h3> <br>
+        <h3> Votre solde actuel est : ${solde} </h3> <br>
         </center>
          </div>
         

@@ -105,7 +105,7 @@ public class MenuAccueilServlet extends HttpServlet {
             }
             
             if (c!=null){ // si on n'a pas trouvé de conseiller on essaie de trouver un admin
-                request.getSession(true).setAttribute("conseiller", cl);
+                request.getSession(true).setAttribute("conseiller", c);
                 response.sendRedirect("espace_conseiller");
             } else {
                 Admin a = null;
@@ -117,7 +117,7 @@ public class MenuAccueilServlet extends HttpServlet {
                 }
                 
                 if (a!=null){
-                    request.getSession(true).setAttribute("admin", cl);
+                    request.getSession(true).setAttribute("admin", a);
                     response.sendRedirect("espace_administrateur");
                 } else{
                     request.setAttribute("msg", "Identifiant ou mot de passe incorrect");

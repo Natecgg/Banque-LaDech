@@ -73,8 +73,6 @@ public class EspaceClientServlet extends HttpServlet {
             out.println(e.getMessage());
         }
         
-        
-        
         request.setAttribute("client",cl);
         request.setAttribute("solde", solde);
         request.getRequestDispatcher("/WEB-INF/espaceClient.jsp").forward(request, response);
