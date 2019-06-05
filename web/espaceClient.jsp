@@ -31,7 +31,7 @@
         <br><br>
         <div class="container">
             <center>
-        <h3> Votre solde actuel est : </h3> <br>
+        <h3> Votre solde actuel est : ${solde} </h3> <br>
         </center>
          </div>
         
