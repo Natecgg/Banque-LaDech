@@ -94,9 +94,13 @@ public class AdministrateurDao {
         PreparedStatement requete = connexion.prepareStatement(sql);
         requete.setInt(1, a.getId());
         ResultSet rs = requete.executeQuery();
+        java.util.Date dateJava =null;
         
+        if (rs.next()){       
         java.sql.Date dateSql = rs.getDate("derniereConnexion");
-        java.util.Date dateJava = DateManagement.dateSql2Java(dateSql);
+        dateJava = DateManagement.dateSql2Java(dateSql);
+        }
+        
         return(dateJava);
     }
     
