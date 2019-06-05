@@ -27,7 +27,7 @@
               >
 <!--              Zone navigation nom , prenom , statut a récupérer et afficher $ {moi.nom} $ {moi.prenom} -->
             
-        <h3> Espace Conseiller de {conseiller.nom} {conseiller.prenom} : </h3> 
+        <h3> Espace Conseiller de ${conseiller.nom} ${conseiller.prenom} : </h3> 
        <br>
         <br>
        </div>
