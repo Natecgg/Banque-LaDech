@@ -29,7 +29,7 @@
             </div>
             <div class="col-6 bd-example container text-center">     
                 <br><br>
-                <div class="text-center"><h1 style="color: fuchsia; font-size: 80px"><b>Banque LaDech</b></h1></div>
+                <div class="text-center container" ><h1 style="color: fuchsia; font-size: 80px; border: 2px solid black;"><b>Banque LaDech</b></h1></div>
                 <br><br>
                 <img src="Images/bank.jpg">
                 <br><br><br>
